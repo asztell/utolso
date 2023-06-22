@@ -3,18 +3,21 @@ import { fetchProducts } from "../utils/services";
 import useProducts from "../contexts/products";
 
 export default function Search() {
-  const { updateProducts } = useProducts();
+  const { updateProducts, updateShowProducts } = useProducts();
 
-  const onSearch = useCallback(async (e) => {
-    const body = { name: e.target.value };
-    try {
-      const products = await fetchProducts(body);
-      console.log("products", products);
-      updateProducts(products);
-    } catch (error) {
-      console.warn("There was an error", error);
-    }
-  }, []);
+  const onSearch = useCallback(
+    async (e) => {
+      const body = { name: e.target.value };
+      try {
+        const products = await fetchProducts(body);
+        updateProducts(products);
+        updateShowProducts(true);
+      } catch (error) {
+        console.warn("There was an error", error);
+      }
+    },
+    [updateProducts, updateShowProducts]
+  );
 
   return (
     <div className="searchbox">

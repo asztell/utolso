@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useCallback } from "react";
 import useProducts from "../contexts/products";
 
 export default function Products() {
-  const { products } = useProducts();
-  console.log("products", products);
+  const { products, showProducts, updateShowProducts } = useProducts();
+
+  const onMouseLeave = useCallback(() => {
+    updateShowProducts(false);
+  }, [updateShowProducts]);
+
+  if (!showProducts) {
+    return null;
+  }
 
   return (
     <>
-      <div className="search-results">
+      <ul onMouseLeave={onMouseLeave} className="search-results">
         {products.map((product) => {
           return (
-            <div key={product._id} className="search-result">
+            <li key={product._id} className="search-result">
               <img src={product.picture} />
               <div className="search-result-info">
                 <h3>{product.name}</h3>
                 <p>{product.price}</p>
               </div>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </>
   );
 }

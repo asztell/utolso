@@ -157,17 +157,12 @@ function scripts() {
   infoLog("Scripts ran on main.js");
 
   // Return the task
-  return (
-    gulp
-      .src("./app/scripts/main.js")
-      //   .src("./app/scripts/**/*.js")
-      // .watch("./app/scripts/**/*.js")
-      //   .watch("./app/scripts/main.js")
-      .pipe(webpack(webpack_config_dev))
-      .on("error", errorLog)
-      .pipe(gulp.dest("./" + _devFolder + "/js/"))
-      .on("error", errorLog)
-  );
+  return gulp
+    .src("./app/scripts/main.js")
+    .pipe(webpack(webpack_config_dev))
+    .on("error", errorLog)
+    .pipe(gulp.dest("./" + _devFolder + "/js/"))
+    .on("error", errorLog);
 }
 
 // Scripts runner, this time using the Webpack Framework

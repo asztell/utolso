@@ -1,12 +1,9 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import Search from "./search";
 import Products from "./products";
 import { ProductsProvider } from "../contexts/products";
 
 function Menu() {
-  // const [showingSearch, setShowingSearch] = useState(false);
-  // const [products, setProducts] = useState([]);
-  console.log(ProductsProvider);
   return (
     <>
       <ProductsProvider>

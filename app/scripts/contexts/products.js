@@ -1,4 +1,10 @@
-import React, { createContext, useReducer, useContext } from "react";
+import React, {
+  createContext,
+  useReducer,
+  useContext,
+  useCallback,
+  useMemo,
+} from "react";
 import productsReducer, { initialState } from "../reducers/products";
 
 const ProductsContext = createContext(initialState);
@@ -6,14 +12,21 @@ const ProductsContext = createContext(initialState);
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
-  const updateProducts = (products) => {
+  const updateProducts = useCallback((products) => {
     dispatch({ type: "UPDATE_PRODUCTS", payload: products });
-  };
+  }, []);
 
-  const value = {
+  const updateShowProducts = useCallback((showProducts) => {
+    dispatch({ type: "UPDATE_SHOW_PRODUCTS", payload: showProducts });
+  }, []);
+
+  const value = useMemo(() => ({
     products: state.products,
+    showProducts: state.showProducts,
     updateProducts,
-  };
+    updateShowProducts,
+  }));
+
   return (
     <ProductsContext.Provider value={value}>
       {children}

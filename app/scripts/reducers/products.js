@@ -1,5 +1,6 @@
 export const initialState = {
   products: [],
+  showProducts: false,
 };
 
 const productsReducer = (state, action) => {
@@ -10,6 +11,11 @@ const productsReducer = (state, action) => {
       return {
         ...state,
         products: payload,
+      };
+    case "UPDATE_SHOW_PRODUCTS":
+      return {
+        ...state,
+        showProducts: payload,
       };
     default:
       throw new Error(`Unhandled action type: ${type}`);
