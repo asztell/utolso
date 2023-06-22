@@ -34,27 +34,37 @@ const PORT = 3035;
  */
 
 function getProducts(name = "", res) {
-  console.log("name", name);
+  //   console.log("name", name);
   const responseData = data.filter((item) =>
     item.name.toLowerCase().startsWith(name.toLowerCase())
   );
+  //   res.writeHead(500, {
+  //     "Content-Type": "application/json",
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Access-Control-Allow-Headers": "*",
+  //   });
+  //   res.write(new Error("Something went wrong"));
   res.writeHead(200, {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "*",
   });
   res.write(JSON.stringify(responseData));
+  //   res.write(JSON.stringify(new Error("Something went wrong")));
   res.end();
 }
 
 function controller(req, res) {
   let body = [];
   req
+    // .on("error", (err) => {
+    //   return err;
+    // })
     .on("data", (chunk) => {
       body = JSON.parse(chunk.toString());
     })
     .on("end", () => {
-      console.log("req.url", req.url);
+      //   console.log("req.url", req.url);
       console.log("body", body);
       switch (req.url) {
         case "/products":

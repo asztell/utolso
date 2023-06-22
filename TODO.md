@@ -1,9 +1,21 @@
 # Tasks
 
-- decide on design, match M.A.C page?
-- refactor classes to functional components?
-- use css library or from scratch?
-- move mapping to home? or create products component?
-- apply css
-- change file extentions?
-- ?
+## 6/22
+
+- create SearchProducts component/file and move search code
+- create the DisplayProducts overlay component/file
+- organize search and overlay structure with html and flexbox
+
+## 6/23
+
+- remove divs, refactor to semantic html
+- change file extentions to jsx
+- refactor with TypeScript
+- unit testing: jest, ReactTestingLibrary, enzyme
+
+## Backlog
+
+- debounce search submit by ~300ms, delay fetch
+- Promise management: consider only latest Promise as response
+- e2e
+- fix webpack catastrophic failure on error
