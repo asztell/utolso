@@ -1,8 +1,9 @@
 # Tasks
 
 - decide on design, match M.A.C page?
-- move mapping to home? or products component?
+- refactor classes to functional components?
+- use css library or from scratch?
+- move mapping to home? or create products component?
 - apply css
-- refactor classes to functional components
 - change file extentions?
 - ?
