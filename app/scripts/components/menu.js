@@ -41,22 +41,16 @@ class Menu extends React.Component {
    * @param e [Object] - the event from a text change handler
    */
   async onSearch(e) {
-    console.log("e.target.value", e.target.value);
-    // Start Here
+    // console.log("e.target.value", e.target.value);
     const name = e.target.value;
     try {
       const response = await fetch("http://localhost:3035/products", {
         method: "POST",
-        // credentials: "same-origin",
-        // mode: "cors",
         headers: {
-          //   //   "Content-Type": "X-www-form-urlencoded",
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
-          //   "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({ name }),
-        // body: { name },
       });
       const products = await response.json();
       console.log("products", products);

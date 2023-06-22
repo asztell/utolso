@@ -44,18 +44,14 @@ function getProducts(name = "", res) {
     "Access-Control-Allow-Headers": "*",
   });
   res.write(JSON.stringify(responseData));
-  //   res.write(JSON.stringify(data));
   res.end();
 }
 
 function controller(req, res) {
-  //   console.log("req", req);
   let body = [];
   req
     .on("data", (chunk) => {
-      console.log("chunk", chunk);
       body = JSON.parse(chunk.toString());
-      console.log("body", body);
     })
     .on("end", () => {
       console.log("req.url", req.url);
@@ -71,32 +67,7 @@ function controller(req, res) {
 
 http
   .createServer(function (req, res) {
-    // .. Here you can create your data response in a JSON format
-    // console.log("req", req);
-    // Object.keys(req).forEach((key) => {
-    //   console.log("key", key);
-    // });
-    // let body = [];
-    // req.on("data", (chunk) => {
-    //   console.log("chunk", chunk);
-    //   body = chunk;
-    //   console.log("body", JSON.parse(body.toString()));
-    // });
-    // console.log("req.url", req.url);
-    // console.log("body", body);
-    // console.log("req.body", req.body);
-    // res.writeHead(200, {
-    //   "Content-Type": "application/json",
-    //   "Access-Control-Allow-Origin": "*",
-    //   "Access-Control-Allow-Headers":
-    //     "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin",
-    // });
-    // //   res.write(JSON.stringify(responseData));
-    // res.write(JSON.stringify(data));
-    // res.end();
     controller(req, res);
-    // res.write("Response goes in here..."); // Write out the default response
-    // res.end(); //end the response
   })
   .listen(PORT);
 
