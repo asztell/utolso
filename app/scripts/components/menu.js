@@ -113,7 +113,7 @@ class Menu extends React.Component {
           <div className="search-results">
             {this.state.products.map((product) => {
               return (
-                <div className="search-result">
+                <div key={product._id} className="search-result">
                   <img src={product.picture} />
                   <div className="search-result-info">
                     <h3>{product.name}</h3>
