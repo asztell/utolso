@@ -5,46 +5,44 @@ import { ProductsProvider } from "../contexts/products";
 
 function Menu() {
   return (
-    <>
-      <ProductsProvider>
-        <header className="menu">
-          <div className="menu-container">
-            <div className="menu-holder">
-              <img
-                src="/img/mac_logo.svg
+    <ProductsProvider>
+      <header className="menu">
+        <div className="menu-container">
+          <div className="menu-holder">
+            <img
+              src="/img/mac_logo.svg
               "
-                alt=""
-              />
-              <nav>
-                <a href="#" className="nav-item">
-                  HOLIDAY
-                </a>
-                <a href="#" className="nav-item">
-                  WHAT'S NEW
-                </a>
-                <a href="#" className="nav-item">
-                  PRODUCTS
-                </a>
-                <a href="#" className="nav-item">
-                  BESTSELLERS
-                </a>
-                <a href="#" className="nav-item">
-                  GOODBYES
-                </a>
-                <a href="#" className="nav-item">
-                  STORES
-                </a>
-                <a href="#" className="nav-item">
-                  INSPIRATION
-                </a>
-              </nav>
-              <Search />
-            </div>
+              alt=""
+            />
+            <nav>
+              <a href="#" className="nav-item">
+                HOLIDAY
+              </a>
+              <a href="#" className="nav-item">
+                WHAT'S NEW
+              </a>
+              <a href="#" className="nav-item">
+                PRODUCTS
+              </a>
+              <a href="#" className="nav-item">
+                BESTSELLERS
+              </a>
+              <a href="#" className="nav-item">
+                GOODBYES
+              </a>
+              <a href="#" className="nav-item">
+                STORES
+              </a>
+              <a href="#" className="nav-item">
+                INSPIRATION
+              </a>
+            </nav>
+            <Search />
           </div>
-        </header>
-        <Products />
-      </ProductsProvider>
-    </>
+        </div>
+      </header>
+      <Products />
+    </ProductsProvider>
   );
 }
 
