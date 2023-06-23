@@ -20,12 +20,15 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: "UPDATE_SHOW_PRODUCTS", payload: showProducts });
   }, []);
 
-  const value = useMemo(() => ({
-    products: state.products,
-    showProducts: state.showProducts,
-    updateProducts,
-    updateShowProducts,
-  }));
+  const value = useMemo(
+    () => ({
+      products: state.products,
+      showProducts: state.showProducts,
+      updateProducts,
+      updateShowProducts,
+    }),
+    [updateProducts, updateShowProducts, state.products, state.showProducts]
+  );
 
   return (
     <ProductsContext.Provider value={value}>

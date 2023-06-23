@@ -333,3 +333,4 @@
 [23/6/2023 -- 0:36]  Sass ran on files
 [23/6/2023 -- 0:39]  Sass ran on files
 [23/6/2023 -- 0:39]  Sass ran on files
+[23/6/2023 -- 8:51]  Scripts ran on main.js
