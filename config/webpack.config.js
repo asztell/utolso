@@ -40,4 +40,7 @@ module.exports = {
       process: "process/browser",
     }),
   ],
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
+  },
 };

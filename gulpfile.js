@@ -158,7 +158,7 @@ function scripts() {
 
   // Return the task
   return gulp
-    .src("./app/scripts/main.js")
+    .src("./app/scripts/main.jsx")
     .pipe(webpack(webpack_config_dev))
     .on("error", errorLog)
     .pipe(gulp.dest("./" + _devFolder + "/js/"))

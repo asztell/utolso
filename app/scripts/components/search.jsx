@@ -23,7 +23,7 @@ export default function Search() {
     <div className="searchbox">
       <div className="box">
         <input type="text" id="search" onChange={onSearch} />
-        <i className="material-icons search"></i>
+        {/* <i className="material-icons search"></i> */}
       </div>
     </div>
   );

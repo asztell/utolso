@@ -15,7 +15,6 @@ html,
 html * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
 }
 
 // These are used to ensure the app runs full display
@@ -23,6 +22,10 @@ html,
 body {
   width: 100%;
   height: 100%;
+}
+
+body {
+  margin: 0;
 }
 
 // Main body content
