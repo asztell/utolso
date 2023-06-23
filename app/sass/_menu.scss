@@ -11,26 +11,6 @@
     flex-basis: 100px;
   }
 
-  & > .Search {
-    flex: 0 1 15%;
-    display: flex;
-    & > input {
-      flex-basis: 100%;
-      background-color: #e8eded;
-      border-radius: 50px;
-      border: navajowhite;
-      color: black;
-      font-family: ano-bold_regular, Helvetica, Arial, sans-serif;
-      height: 24px;
-      outline: none;
-      padding-left: 10px;
-      text-transform: uppercase;
-    }
-    & > input::placeholder {
-      font-size: 11px;
-    }
-  }
-
   .MyMacLink {
     margin-left: 1.2%;
     > img {
