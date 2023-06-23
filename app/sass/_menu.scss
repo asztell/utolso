@@ -22,6 +22,10 @@ header.menu {
       width: 100%;
       max-width: $siteWidth;
       margin: 0 auto;
+
+      img {
+        width: 180px;
+      }
     }
 
     h1 {
@@ -62,10 +66,10 @@ header.menu {
   }
 
   input[type="text"] {
-    padding-left: 10px;
-    background: url("../images/search_icon_black.png");
-    background-color: #e8eded;
-    border: navajowhite;
-    color: black;
+    // padding-left: 10px;
+    // background: url("../images/search_icon_black.png");
+    // // background-color: #e8eded;
+    // border: navajowhite;
+    // color: black;
   }
 }

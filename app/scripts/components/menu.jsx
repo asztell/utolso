@@ -10,7 +10,11 @@ function Menu() {
         <header className="menu">
           <div className="menu-container">
             <div className="menu-holder">
-              <h1>ELC</h1>
+              <img
+                src="/img/mac_logo.svg
+              "
+                alt=""
+              />
               <nav>
                 <a href="#" className="nav-item">
                   HOLIDAY
