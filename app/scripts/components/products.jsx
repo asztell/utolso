@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
-import useProducts from "../contexts/products";
+import { useProducts } from "../contexts/products";
 
-export default function Products() {
+export function Products() {
   const { products, showProducts, updateShowProducts } = useProducts();
 
   const onMouseLeave = useCallback(() => {

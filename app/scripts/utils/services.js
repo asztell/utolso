@@ -16,8 +16,9 @@ export async function POST(url, body) {
   }
 }
 
-export function fetchProducts(body) {
+export function fetchProductsByName(productName) {
   const PRODUCTS_URL = `/products`;
   const url = `${ROOT_URL}${PRODUCTS_URL}`;
+  const body = { name: productName };
   return POST(url, body);
 }

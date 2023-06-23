@@ -3,7 +3,7 @@ export const initialState = {
   showProducts: false,
 };
 
-const productsReducer = (state, action) => {
+export const productsReducer = (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -21,5 +21,3 @@ const productsReducer = (state, action) => {
       throw new Error(`Unhandled action type: ${type}`);
   }
 };
-
-export default productsReducer;

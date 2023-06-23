@@ -1,15 +1,14 @@
 import React, { useCallback } from "react";
-import { fetchProducts } from "../utils/services";
-import useProducts from "../contexts/products";
+import { fetchProductsByName } from "../utils/services";
+import { useProducts } from "../contexts/products";
 
-export default function Search() {
+export function Search() {
   const { updateProducts, updateShowProducts } = useProducts();
 
   const onSearch = useCallback(
-    async (e) => {
-      const body = { name: e.target.value };
+    async ({ target: { value } }) => {
       try {
-        const products = await fetchProducts(body);
+        const products = await fetchProductsByName(value);
         updateProducts(products);
         updateShowProducts(true);
       } catch (error) {
@@ -20,10 +19,8 @@ export default function Search() {
   );
 
   return (
-    <div className="searchbox">
-      <div className="box">
-        <input type="text" id="search" onChange={onSearch} />
-      </div>
+    <div className="Search box">
+      <input type="text" onChange={onSearch} placeholder="SEARCH" />
     </div>
   );
 }

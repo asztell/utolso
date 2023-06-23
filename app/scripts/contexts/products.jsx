@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import productsReducer, { initialState } from "../reducers/products";
+import { initialState, productsReducer } from "../reducers/products";
 
 const ProductsContext = createContext(initialState);
 
@@ -37,7 +37,7 @@ export const ProductsProvider = ({ children }) => {
   );
 };
 
-const useProducts = () => {
+export const useProducts = () => {
   const context = useContext(ProductsContext);
 
   if (context === undefined) {
@@ -46,5 +46,3 @@ const useProducts = () => {
 
   return context;
 };
-
-export default useProducts;

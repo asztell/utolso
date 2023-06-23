@@ -1,49 +1,88 @@
 import React from "react";
-import Search from "./search";
-import Products from "./products";
+import { Search } from "./search";
+import { Products } from "./products";
 import { ProductsProvider } from "../contexts/products";
 
-function Menu() {
+export function Menu() {
   return (
     <ProductsProvider>
-      <header className="menu">
-        <div className="menu-container">
-          <div className="menu-holder">
-            <img
-              src="/img/mac_logo.svg
-              "
-              alt=""
-            />
-            <nav>
-              <a href="#" className="nav-item">
-                HOLIDAY
-              </a>
-              <a href="#" className="nav-item">
-                WHAT'S NEW
-              </a>
-              <a href="#" className="nav-item">
-                PRODUCTS
-              </a>
-              <a href="#" className="nav-item">
-                BESTSELLERS
-              </a>
-              <a href="#" className="nav-item">
-                GOODBYES
-              </a>
-              <a href="#" className="nav-item">
-                STORES
-              </a>
-              <a href="#" className="nav-item">
-                INSPIRATION
-              </a>
-            </nav>
-            <Search />
-          </div>
+      <header className="Menu box">
+        <div className="MenuContent box">
+          <Logo />
+          <PromoStrip />
+          <Search />
+          <MyMacLink />
+          <ShoppingCartLink />
         </div>
+        <Nav />
       </header>
       <Products />
     </ProductsProvider>
   );
 }
 
-export default Menu;
+function Nav() {
+  return (
+    <nav className="Nav box">
+      <a href="#" className="NavItem">
+        HOLIDAY
+      </a>
+      <a href="#" className="NavItem">
+        WHAT'S NEW
+      </a>
+      <a href="#" className="NavItem">
+        PRODUCTS
+      </a>
+      <a href="#" className="NavItem">
+        BESTSELLERS
+      </a>
+      <a href="#" className="NavItem">
+        GOODBYES
+      </a>
+      <a href="#" className="NavItem">
+        STORES
+      </a>
+      <a href="#" className="NavItem">
+        INSPIRATION
+      </a>
+    </nav>
+  );
+}
+
+function Logo() {
+  return (
+    <img
+      className="Logo box"
+      src="/img/mac_logo.svg
+      "
+      alt=""
+    />
+  );
+}
+
+function PromoStrip() {
+  return (
+    <span className="PromoStrip box">
+      COOL ADVERTIZING WITH PROMOTIONS AND SALES!
+      <a href="#" className="PromoURL">
+        SIGN UP
+      </a>
+    </span>
+  );
+}
+
+function MyMacLink() {
+  return (
+    <a href="#" className="MyMacLink">
+      <img src="/img/my_mac.png" alt="My MAC" />
+    </a>
+  );
+}
+
+function ShoppingCartLink() {
+  return (
+    <a href="#" className="ShoppingCartLink">
+      <img src="/img/shopping_cart.png" alt="Shopping Cart" />
+    </a>
+  );
+}
