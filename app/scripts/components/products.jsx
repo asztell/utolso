@@ -5,7 +5,7 @@ export default function Products() {
   const { products, showProducts, updateShowProducts } = useProducts();
 
   const onMouseLeave = useCallback(() => {
-    // updateShowProducts(false);
+    updateShowProducts(false);
   }, [updateShowProducts]);
 
   if (!showProducts) {
