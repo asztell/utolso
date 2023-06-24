@@ -7,10 +7,12 @@ import {
   useMemo,
 } from "react";
 import { initialState, productsReducer } from "../reducers/products";
+import { Props } from "../types";
 
 const ProductsContext = createContext(initialState);
 
-export const ProductsProvider: React.FC<Props> = ({ children }) => {
+// export const ProductsProvider: React.FC<Props> = ({ children }) => {
+export function ProductsProvider({ children }) {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
   const updateProducts = useCallback((products) => {
@@ -36,7 +38,7 @@ export const ProductsProvider: React.FC<Props> = ({ children }) => {
       {children}
     </ProductsContext.Provider>
   );
-};
+}
 
 export const useProducts = () => {
   const context = useContext(ProductsContext);

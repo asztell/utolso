@@ -23,13 +23,16 @@ export function Products() {
       <ul onMouseLeave={onMouseLeave} className="SearchResults">
         {products.slice(0, 4).map((product) => {
           return (
-            <li key={product._id} className="ProductCard">
-              <img src={product.picture} />
-              <div className="product-info">
-                <h3>{product.name.toUpperCase()}</h3>
-                <p>{product.about}</p>
-              </div>
-            </li>
+            // this anchor tag would normally be a Link component from react-router-dom
+            <a href="#">
+              <li key={product._id} className="ProductCard">
+                <img src={product.picture} />
+                <div className="product-info">
+                  <h3>{product.name.toUpperCase()}</h3>
+                  <p>{product.about}</p>
+                </div>
+              </li>
+            </a>
           );
         })}
       </ul>

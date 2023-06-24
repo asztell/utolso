@@ -272,7 +272,12 @@ function browserSyncServe(done) {
 
 function watchTask() {
   gulp.watch(
-    ["./app/scripts/**/*.jsx", "./app/scripts/**/*.js"],
+    [
+      "./app/scripts/**/*.jsx",
+      "./app/scripts/**/*.js",
+      "./app/scripts/**/*.tsx",
+      "./app/scripts/**/*.ts",
+    ],
     gulp.series(scripts, browserSyncReload)
   );
   gulp.watch(["./app/**/*.scss"], gulp.series(sassTask, browserSyncReload));

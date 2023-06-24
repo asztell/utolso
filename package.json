@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.0.0-beta.36",
     "@tsconfig/node19": "^2.0.1",
+    "@types/react": "^18.2.14",
     "babel-loader": "^9.1.2",
     "browser-sync": "^2.26.3",
     "cross-env": "^7.0.3",

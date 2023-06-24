@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           options: {
@@ -35,7 +35,11 @@ module.exports = {
         test: /\.(png|jp(e*)g|svg|gif)$/,
         type: "asset/resource",
       },
-      { test: /\.(ts|tsx)$/, use: "ts-loader" },
+      {
+        test: /\.(ts|tsx)$/,
+        use: "ts-loader",
+        exclude: /(node_modules)/,
+      },
     ],
   },
   plugins: [
