@@ -1,4 +1,5 @@
-import React, {
+import * as React from "react";
+import {
   createContext,
   useReducer,
   useContext,
@@ -9,7 +10,7 @@ import { initialState, productsReducer } from "../reducers/products";
 
 const ProductsContext = createContext(initialState);
 
-export const ProductsProvider = ({ children }) => {
+export const ProductsProvider: React.FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
   const updateProducts = useCallback((products) => {

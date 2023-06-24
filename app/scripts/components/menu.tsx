@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Search } from "./search";
 import { Products } from "./products";
 import { ProductsProvider } from "../contexts/products";
@@ -21,6 +21,11 @@ export function Menu() {
   );
 }
 
+/*
+  The following components would normally be extracted in their own files with their own tests.
+  However, for the sake of simplicity,
+  and given that they have no complex functionality I kept them here.
+*/
 function Nav() {
   return (
     <nav className="Nav box">
@@ -66,7 +71,7 @@ function Logo() {
 function PromoStrip() {
   return (
     <span className="PromoStrip box">
-      COOL ADVERTIZING WITH PROMOTIONS AND SALES!
+      COOL ADVERTISING WITH PROMOTIONS AND SALES!
       <a href="#" className="PromoURL">
         SIGN UP
       </a>

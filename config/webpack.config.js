@@ -35,6 +35,7 @@ module.exports = {
         test: /\.(png|jp(e*)g|svg|gif)$/,
         type: "asset/resource",
       },
+      { test: /\.(ts|tsx)$/, use: "ts-loader" },
     ],
   },
   plugins: [
@@ -45,6 +46,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".ts", ".jsx", ".tsx"],
   },
 };
