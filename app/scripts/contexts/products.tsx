@@ -11,8 +11,8 @@ import { Props } from "../types";
 
 const ProductsContext = createContext(initialState);
 
-// export const ProductsProvider: React.FC<Props> = ({ children }) => {
-export function ProductsProvider({ children }) {
+export const ProductsProvider: React.FC<Props> = ({ children }: Props) => {
+  // export function ProductsProvider({ children }) {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
   const updateProducts = useCallback((products) => {
@@ -38,10 +38,11 @@ export function ProductsProvider({ children }) {
       {children}
     </ProductsContext.Provider>
   );
-}
+};
 
 export const useProducts = () => {
   const context = useContext(ProductsContext);
+  console.log("context", context);
 
   if (context === undefined) {
     throw new Error("useProducts must be used within ProductsContext");

@@ -1,8 +1,11 @@
 export const initialState = {
   products: [],
   showProducts: false,
+  updateShowProducts: (a) => {},
+  updateProducts: (a) => {},
 };
 
+// export const productsReducer = (state = initialState, action) => {
 export const productsReducer = (state, action) => {
   const { type, payload } = action;
 

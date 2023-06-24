@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useProducts } from "../contexts/products";
 
 export function Products() {
@@ -9,6 +9,11 @@ export function Products() {
     updateShowProducts(false);
   }, [updateShowProducts]);
 
+  const numberOfProductsDisplayed = useMemo(
+    () => (products.length > 4 ? 4 : products.length),
+    [products.length]
+  );
+
   if (!showProducts) {
     return null;
   }
@@ -16,7 +21,7 @@ export function Products() {
   return (
     <section>
       <h2 className="SearchResultsSummary">
-        DISPLAYING 4 OF {products.length} RESULTS{" "}
+        DISPLAYING {numberOfProductsDisplayed} OF {products.length} RESULTS{" "}
         <a href="#">SEE ALL RESULTS</a>
       </h2>
       <hr />
@@ -24,8 +29,9 @@ export function Products() {
         {products.slice(0, 4).map((product) => {
           return (
             // this anchor tag would normally be a Link component from react-router-dom
-            <a href="#">
-              <li key={product._id} className="ProductCard">
+            // pointing to all search results page
+            <a key={product._id} href="#">
+              <li className="ProductCard">
                 <img src={product.picture} />
                 <div className="product-info">
                   <h3>{product.name.toUpperCase()}</h3>
