@@ -24,17 +24,20 @@ export function Menu() {
 function Nav() {
   return (
     <nav className="Nav box">
+      <a href="#" className="NavItem NavItemRed">
+        SALE UPON SALE
+      </a>
       <a href="#" className="NavItem">
         HOLIDAY
       </a>
       <a href="#" className="NavItem">
-        WHAT'S NEW
+        NEW
       </a>
       <a href="#" className="NavItem">
         PRODUCTS
       </a>
       <a href="#" className="NavItem">
-        BESTSELLERS
+        BEST-SELLERS
       </a>
       <a href="#" className="NavItem">
         GOODBYES

@@ -27,13 +27,7 @@ $siteWidth: 1440px;
   flex-direction: column;
 }
 
-// for testing
-.box {
-  //   border: 1px solid red;
-  //   padding: 2px;
-}
-
-@media (max-width: 950px) {
+@media (max-width: 1450px) {
   .Content {
     margin-left: 0;
     margin-right: 0;

@@ -1,6 +1,7 @@
 .Search {
-  flex: 0 1 15%;
+  flex: 0 1 12%;
   display: flex;
+
   & > input {
     flex-basis: 100%;
     background-color: #e8eded;
@@ -8,12 +9,25 @@
     border: navajowhite;
     color: black;
     font-family: ano-bold_regular, Helvetica, Arial, sans-serif;
-    height: 24px;
+    height: 30px;
     outline: none;
     padding-left: 10px;
     text-transform: uppercase;
   }
+
   & > input::placeholder {
     font-size: 11px;
+  }
+}
+
+.SearchResultsSummary {
+  font-family: ano-regular, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+  margin-bottom: 40px;
+  margin-top: 50px;
+
+  & > a {
+    color: black;
   }
 }
