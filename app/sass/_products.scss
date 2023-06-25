@@ -1,0 +1,46 @@
+.SearchResults {
+  background: white;
+  z-index: 1;
+  top: 10%;
+  left: 5%;
+  display: flex;
+  padding: 0;
+  & > a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.ProductCard {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.ProductCard img {
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  padding-top: 15px;
+  transition: display 0.5s ease;
+}
+
+.ProductCard p {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 11px;
+  font-family: ano-regular, Helvetica, Arial, sans-serif;
+  padding-top: 15px;
+}
+
+.ProductCard h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  font-family: ano-regular, Helvetica, Arial, sans-serif;
+  padding-top: 15px;
+  font-weight: 400;
+}

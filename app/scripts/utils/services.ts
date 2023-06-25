@@ -1,5 +1,4 @@
 const ROOT_URL = "http://localhost:3035";
-const PRODUCTS_URL = `${ROOT_URL}/products`;
 
 export async function POST(url, body) {
   try {
@@ -13,12 +12,13 @@ export async function POST(url, body) {
     });
     return response.json();
   } catch (error) {
-    console.log("error", error);
     throw error;
   }
 }
 
-export function fetchProducts(body) {
-  const url = `${PRODUCTS_URL}`;
+export function fetchProductsByName(productName) {
+  const PRODUCTS_URL = `/products`;
+  const url = `${ROOT_URL}${PRODUCTS_URL}`;
+  const body = { name: productName };
   return POST(url, body);
 }

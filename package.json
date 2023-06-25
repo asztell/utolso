@@ -30,6 +30,8 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.0.0-beta.36",
+    "@tsconfig/node19": "^2.0.1",
+    "@types/react": "^18.2.14",
     "babel-loader": "^9.1.2",
     "browser-sync": "^2.26.3",
     "cross-env": "^7.0.3",
@@ -49,6 +51,8 @@
     "react-dom": "^18.2.0",
     "react-native-dotenv": "^2.5.5",
     "sass": "^1.57.1",
+    "ts-loader": "^9.4.3",
+    "typescript": "^5.1.3",
     "uglify-js": "3.2.2",
     "webpack": "^5.75.0",
     "webpack-stream": "^7"
