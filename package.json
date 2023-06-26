@@ -22,7 +22,7 @@
     "sass": "cross-env set NODE_ENV=development&&gulp sass",
     "servers": "set NODE_ENV=development&&gulp watch",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watch --coverage scripts",
     "third-party": "cross-env set NODE_ENV=development&&gulp vendor"
   },
   "keywords": [

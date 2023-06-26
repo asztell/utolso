@@ -110,7 +110,15 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,12 +139,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,12 +154,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,26 +174,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export type Product = {
-  _id: number;
-  name: string;
-  price: number;
-  about: string;
+  _id: string;
+  isActive: string;
+  price: string;
   picture: string;
-};
-export type ProductState = {
-  products: Product[];
-  showProducts: boolean;
+  name: string;
+  about: string;
+  tags: string[];
 };
 &nbsp;
-type UpdateProductsAction = {
+export type UpdateProductsAction = {
   type: "UPDATE_PRODUCTS";
   payload: Product[];
 };
-type UpdateShowProductsAction = {
+export type UpdateShowProductsAction = {
   type: "UPDATE_SHOW_PRODUCTS";
   payload: boolean;
 };
 &nbsp;
+export type ProductState = {
+  products: Product[];
+  showProducts: boolean;
+};
 export const initialState: ProductState = {
   products: [],
   showProducts: false,
@@ -190,6 +208,9 @@ export const productsReducer = <span class="fstat-no" title="function not covere
   const { type, payload } = <span class="cstat-no" title="statement not covered" >action;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  switch (type) {</span>
+    // normally I would use constants for the action types
+    // but with typescript, it is not necessary
+    // since the compiler will catch any typos
     case "UPDATE_PRODUCTS":
 <span class="cstat-no" title="statement not covered" >      return {</span>
         ...state,
@@ -201,7 +222,10 @@ export const productsReducer = <span class="fstat-no" title="function not covere
         showProducts: payload,
       };
     default:
-<span class="cstat-no" title="statement not covered" >      throw new Error(`Unhandled action type: ${type}`);</span>
+      // to avoid ungraceful errors in the UI
+      // I'm just returning the state;
+      // typescript should catch typos in the action type
+<span class="cstat-no" title="statement not covered" >      return state;</span>
   }
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -211,7 +235,7 @@ export const productsReducer = <span class="fstat-no" title="function not covere
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-25T20:11:29.668Z
+                at 2023-06-26T09:55:36.262Z
             </div>
         <script src="../prettify.js"></script>
         <script>

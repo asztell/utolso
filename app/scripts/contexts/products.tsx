@@ -13,12 +13,18 @@ import {
   productsReducer,
 } from "../reducers/products";
 
-const ProductsContext = createContext<
+export const ProductsContext = createContext<
   ProductState & {
     updateProducts: (products: Product[]) => void;
     updateShowProducts: (showProducts: boolean) => void;
   }
->({ ...initialState, updateProducts: () => {}, updateShowProducts: () => {} });
+>({
+  ...initialState,
+  /* istanbul ignore next */
+  updateProducts: () => {},
+  /* istanbul ignore next */
+  updateShowProducts: () => {},
+});
 
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);

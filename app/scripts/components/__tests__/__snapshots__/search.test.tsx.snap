@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Search /> render Search 1`] = `
-<div>
-  <div
-    class="Search box"
-  >
-    <input
-      placeholder="test SEARCH"
-      type="text"
-    />
+exports[`<Search /> renders 1`] = `
+<body>
+  <div>
+    <div
+      class="Search box"
+    >
+      <input
+        placeholder="test SEARCH"
+        type="text"
+      />
+    </div>
   </div>
-</div>
+</body>
 `;
