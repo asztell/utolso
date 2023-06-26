@@ -20,7 +20,9 @@ export const ProductsContext = createContext<
   }
 >({
   ...initialState,
-  // for some reason these ignores don't work in the coverage report
+  // not sure how else to define these functions
+  // without adding them to the reducer and then ignoring them in the coverage report;
+  // and for some reason these ignores don't work in the coverage report
   /* istanbul ignore next */ updateProducts: () => {},
   /* istanbul ignore next */ updateShowProducts: () => {},
 });
