@@ -15,7 +15,6 @@ export const fetchConfig = {
 
 export async function POST(url, body) {
   try {
-    console.log("POST" + url + " " + JSON.stringify(body));
     const response = await fetch(url, {
       ...fetchConfig,
       body: JSON.stringify(body),

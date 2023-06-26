@@ -20,10 +20,9 @@ export const ProductsContext = createContext<
   }
 >({
   ...initialState,
-  /* istanbul ignore next */
-  updateProducts: () => {},
-  /* istanbul ignore next */
-  updateShowProducts: () => {},
+  // for some reason these ignores don't work in the coverage report
+  /* istanbul ignore next */ updateProducts: () => {},
+  /* istanbul ignore next */ updateShowProducts: () => {},
 });
 
 export const ProductsProvider = ({ children }) => {

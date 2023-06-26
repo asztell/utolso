@@ -42,7 +42,9 @@ describe("<Search />", () => {
   it("renders but fetch fails", async () => {
     // replace the implementation with a rejected promise
     fetchProductsByName.mockImplementation(() =>
-      Promise.reject(new Error("nope"))
+      Promise.reject(
+        new Error("This is an expected error for testing purposes")
+      )
     );
     render(
       <IntlProvider

@@ -5,7 +5,6 @@ import { useProducts } from "../contexts/products";
 
 export function Products() {
   const { products, showProducts, updateShowProducts } = useProducts();
-
   // I chose mouseleave because it seemed like the most intuitive way
   // to close the dropdown,
   // but for a prod implementation I would want to consult a UX designer
@@ -18,8 +17,6 @@ export function Products() {
     () => (products.length > 4 ? 4 : products.length),
     [products.length]
   );
-  console.log("products", products);
-  console.log("showProducts", showProducts);
   if (!showProducts) {
     return null;
   }
