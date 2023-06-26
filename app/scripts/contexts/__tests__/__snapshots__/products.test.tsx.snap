@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductsProvider /> render Products 1`] = `<div />`;
+exports[`<ProductsProvider /> provider renders 1`] = `
+<body>
+  <div>
+    <div
+      class="my-div"
+    />
+  </div>
+</body>
+`;
