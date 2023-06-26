@@ -30,7 +30,8 @@ $mainFontBold: ano-bold_regular, Helvetica, Arial, sans-serif;
   flex-direction: column;
 }
 
-// this is only for local testing;
+// this is only for local testing, to make sure the site is somewhat responsive
+// when the browser window is resized to see the developer tools;
 // the css would benefit from a few good media queries
 // to make the site more responsive;
 // flexbox is a great additional tool for this
