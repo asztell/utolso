@@ -49,9 +49,9 @@ function Nav() {
       <a href="#" className="NavItem">
         <FormattedMessage id="Nav.NavItem.Goodbyes" />
       </a>
-      <a href="#" className="NavItem">
+      {/* <a href="#" className="NavItem">
         <FormattedMessage id="Nav.NavItem.Stores" />
-      </a>
+      </a> */}
       <a href="#" className="NavItem">
         <FormattedMessage id="Nav.NavItem.Inspiration" />
       </a>
