@@ -54,7 +54,7 @@ describe("<Products />", () => {
   });
 
   // need to figure out how to test the mouseleave event
-  // without adding more components to the dom
+  // without adding more components to the dom if possible
   it.skip("renders", async () => {
     render(
       <IntlProvider
