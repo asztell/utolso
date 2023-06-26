@@ -102,12 +102,6 @@ exports[`<App /> render App 1`] = `
             class="NavItem"
             href="#"
           >
-            STORES
-          </a>
-          <a
-            class="NavItem"
-            href="#"
-          >
             INSPIRATION
           </a>
         </nav>

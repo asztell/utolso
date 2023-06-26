@@ -96,12 +96,6 @@ exports[`<Menu /> render Menu 1`] = `
         class="NavItem"
         href="#"
       >
-        test STORES
-      </a>
-      <a
-        class="NavItem"
-        href="#"
-      >
         test INSPIRATION
       </a>
     </nav>

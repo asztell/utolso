@@ -1129,3 +1129,5 @@
 [26/6/2023 -- 9:1]  Sass ran on files
 [26/6/2023 -- 9:3]  Sass ran on files
 [26/6/2023 -- 9:4]  Sass ran on files
+[26/6/2023 -- 9:11]  Scripts ran on main.js
+[26/6/2023 -- 9:12]  Mustache Templates ran on the HTML files

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687784395253" clover="3.2.0">
-  <project timestamp="1687784395253" name="All files">
+<coverage generated="1687785200157" clover="3.2.0">
+  <project timestamp="1687785200157" name="All files">
     <metrics statements="91" coveredstatements="90" conditionals="7" coveredconditionals="6" methods="26" coveredmethods="23" elements="124" coveredelements="119" complexity="0" loc="91" ncloc="91" packages="5" files="8" classes="8"/>
     <package name="scripts">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -33,10 +33,10 @@
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="31" count="2" type="stmt"/>
-        <line num="63" count="2" type="stmt"/>
-        <line num="74" count="2" type="stmt"/>
-        <line num="86" count="2" type="stmt"/>
-        <line num="94" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="83" count="2" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
       </file>
       <file name="products.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/components/products.tsx">
         <metrics statements="14" coveredstatements="13" conditionals="3" coveredconditionals="2" methods="4" coveredmethods="3"/>

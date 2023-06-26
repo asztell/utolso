@@ -21,7 +21,6 @@ describe("<Menu />", () => {
           "Nav.NavItem.Products": "test PRODUCTS",
           "Nav.NavItem.Best-Sellers": "test BEST-SELLERS",
           "Nav.NavItem.Goodbyes": "test GOODBYES",
-          "Nav.NavItem.Stores": "test STORES",
           "Nav.NavItem.Inspiration": "test INSPIRATION",
           "PromoStrip.Promo.Text":
             "test COOL ADVERTISING WITH PROMOTIONS AND SALES!",

@@ -4,4 +4,3 @@ node_modules
 .local_server
 .idea/
 audit
-coverage
