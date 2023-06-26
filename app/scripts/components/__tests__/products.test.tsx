@@ -53,9 +53,7 @@ describe("<Products />", () => {
     ).toBeInTheDocument();
   });
 
-  // need to figure out how to test the mouseleave event
-  // without adding more components to the dom if possible
-  it.skip("renders", async () => {
+  it("renders", async () => {
     render(
       <IntlProvider
         locale={navigator.language}
@@ -77,7 +75,7 @@ describe("<Products />", () => {
       fireEvent.mouseOver(screen.getByText("test DISPLAYING 1 OF 1 RESULTS"));
     });
     await waitFor(() => {
-      fireEvent.click(document);
+      fireEvent.mouseLeave(screen.getByText("test DISPLAYING 1 OF 1 RESULTS"));
     });
     expect(screen.getByText("test DISPLAYING 1 OF 1 RESULTS")).toBeNull();
   });

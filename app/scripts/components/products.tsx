@@ -10,6 +10,7 @@ export function Products() {
   // but for a prod implementation I would want to consult a UX designer
   // to see what they think is best
   const onMouseLeave = useCallback(() => {
+    console.log("mouse leave");
     updateShowProducts(false);
   }, [updateShowProducts]);
 

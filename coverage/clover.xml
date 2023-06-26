@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687785200157" clover="3.2.0">
-  <project timestamp="1687785200157" name="All files">
-    <metrics statements="91" coveredstatements="90" conditionals="7" coveredconditionals="6" methods="26" coveredmethods="23" elements="124" coveredelements="119" complexity="0" loc="91" ncloc="91" packages="5" files="8" classes="8"/>
+<coverage generated="1687789202218" clover="3.2.0">
+  <project timestamp="1687789202218" name="All files">
+    <metrics statements="92" coveredstatements="90" conditionals="7" coveredconditionals="6" methods="26" coveredmethods="23" elements="125" coveredelements="119" complexity="0" loc="92" ncloc="92" packages="5" files="8" classes="8"/>
     <package name="scripts">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="main.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/main.tsx">
@@ -16,7 +16,7 @@
       </file>
     </package>
     <package name="scripts.components">
-      <metrics statements="47" coveredstatements="46" conditionals="3" coveredconditionals="2" methods="15" coveredmethods="14"/>
+      <metrics statements="48" coveredstatements="46" conditionals="3" coveredconditionals="2" methods="15" coveredmethods="14"/>
       <file name="home.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/components/home.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
@@ -39,21 +39,22 @@
         <line num="91" count="2" type="stmt"/>
       </file>
       <file name="products.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/components/products.tsx">
-        <metrics statements="14" coveredstatements="13" conditionals="3" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <metrics statements="15" coveredstatements="13" conditionals="3" coveredconditionals="2" methods="4" coveredmethods="3"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="20" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
       </file>
       <file name="search.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/components/search.tsx">
         <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -86,14 +87,14 @@
         <line num="9" count="5" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
         <line num="30" count="5" type="stmt"/>
-        <line num="31" count="10" type="stmt"/>
-        <line num="33" count="10" type="stmt"/>
+        <line num="31" count="11" type="stmt"/>
+        <line num="33" count="11" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
-        <line num="37" count="10" type="stmt"/>
+        <line num="37" count="11" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
-        <line num="41" count="10" type="stmt"/>
-        <line num="42" count="10" type="stmt"/>
-        <line num="51" count="10" type="stmt"/>
+        <line num="41" count="11" type="stmt"/>
+        <line num="42" count="11" type="stmt"/>
+        <line num="51" count="11" type="stmt"/>
         <line num="58" count="5" type="stmt"/>
         <line num="59" count="9" type="stmt"/>
         <line num="61" count="9" type="cond" truecount="1" falsecount="0"/>
