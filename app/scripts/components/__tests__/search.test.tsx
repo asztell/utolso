@@ -6,9 +6,17 @@ import { Search } from "../search";
 import { fetchProductsByName } from "../../utils/services";
 import { act } from "react-dom/test-utils";
 
-jest.mock("../../utils/services", () => ({
-  fetchProductsByName: jest.fn(() => Promise.resolve([])),
-}));
+// jest.mock("../../utils/services", () => ({
+//   fetchProductsByName: jest.fn(() => Promise.resolve([])),
+// }));
+jest.mock("../../utils/services", () => {
+  const actual = jest.requireActual("../../utils/services");
+
+  return {
+    ...actual,
+    fetchProductsByName: jest.fn(() => Promise.resolve([])),
+  };
+});
 
 describe("<Search />", () => {
   afterEach(() => {
@@ -16,6 +24,7 @@ describe("<Search />", () => {
   });
 
   it("renders", () => {
+    // fetchProductsByName.mockImplementation(() => Promise.resolve([]));
     render(
       <IntlProvider
         locale={navigator.language}

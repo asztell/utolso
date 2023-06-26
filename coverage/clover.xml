@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687775918054" clover="3.2.0">
-  <project timestamp="1687775918054" name="All files">
+<coverage generated="1687776714515" clover="3.2.0">
+  <project timestamp="1687776714515" name="All files">
     <metrics statements="94" coveredstatements="90" conditionals="7" coveredconditionals="6" methods="26" coveredmethods="22" elements="127" coveredelements="118" complexity="0" loc="94" ncloc="94" packages="5" files="8" classes="8"/>
     <package name="scripts">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -120,16 +120,16 @@
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="services.ts" path="/Users/arpad/Downloads/utolso/app/scripts/utils/services.ts">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
         <line num="19" count="3" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
