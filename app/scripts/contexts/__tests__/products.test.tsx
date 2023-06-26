@@ -17,6 +17,9 @@ describe("<ProductsProvider />", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
+  // I had a hard time mocking the reducer
+  // I would need to do some more research on how to mock the reducer
+  // so I could test the ProductsProvider and the useReducer hook
   xtest("ProductsProvider", () => {
     // const response = JSON.parse(
     // const response = JSON.stringify(

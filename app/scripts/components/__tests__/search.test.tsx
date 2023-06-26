@@ -6,7 +6,7 @@ import { Search } from "../search";
 
 describe("<Search />", () => {
   test("render Search", () => {
-    const { container } = render(
+    render(
       <IntlProvider
         locale={navigator.language}
         messages={{
@@ -16,10 +16,10 @@ describe("<Search />", () => {
         <Search />
       </IntlProvider>
     );
+    // the search fails because the useReducer needs to be mocked
     fireEvent.change(screen.getByPlaceholderText("test SEARCH"), {
       target: { value: "test" },
     });
     expect(screen.getByPlaceholderText("test SEARCH")).toHaveValue("test");
-    // expect(container).toMatchSnapshot();
   });
 });
