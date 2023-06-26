@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> render Menu 1`] = `
+<div>
+  <header
+    class="Menu box"
+  >
+    <div
+      class="MenuContent box"
+    >
+      <img
+        alt="M.A.C. Cosmetics"
+        class="Logo box"
+        src="/img/mac_logo.svg
+      "
+      />
+      <span
+        class="PromoStrip box"
+      >
+        test COOL ADVERTISING WITH PROMOTIONS AND SALES!
+        <a
+          class="PromoURL"
+          href="#"
+        >
+           
+          test SIGN UP
+        </a>
+      </span>
+      <div
+        class="Search box"
+      >
+        <input
+          placeholder="test SEARCH"
+          type="text"
+        />
+      </div>
+      <a
+        class="MyMacLink"
+        href="#"
+      >
+        <img
+          alt="My MAC"
+          src="/img/my_mac.png"
+        />
+      </a>
+      <a
+        class="ShoppingCartLink"
+        href="#"
+      >
+        <img
+          alt="Shopping Cart"
+          src="/img/shopping_cart.png"
+        />
+      </a>
+    </div>
+    <nav
+      class="Nav box"
+    >
+      <a
+        class="NavItem NavItemRed"
+        href="#"
+      >
+        test SALE UPON SALE
+      </a>
+      <a
+        class="NavItem"
+        href="#"
+      >
+        test HOLIDAY
+      </a>
+      <a
+        class="NavItem"
+        href="#"
+      >
+        test NEW
+      </a>
+      <a
+        class="NavItem"
+        href="#"
+      >
+        test PRODUCTS
+      </a>
+      <a
+        class="NavItem"
+        href="#"
+      >
+        test BEST-SELLERS
+      </a>
+      <a
+        class="NavItem"
+        href="#"
+      >
+        test GOODBYES
+      </a>
+      <a
+        class="NavItem"
+        href="#"
+      >
+        test STORES
+      </a>
+      <a
+        class="NavItem"
+        href="#"
+      >
+        test INSPIRATION
+      </a>
+    </nav>
+  </header>
+</div>
+`;

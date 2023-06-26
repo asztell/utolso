@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "jsx": "react"
-  }
+    "esModuleInterop": true,
+    "jsx": "react",
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "audit", "config"],
+  // "target": "es2015",
+  "lib": ["ESNext", "dom"],
+  "skipLibCheck": true
 }

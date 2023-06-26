@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   createContext,
   useReducer,
@@ -6,13 +6,21 @@ import {
   useCallback,
   useMemo,
 } from "react";
-import { initialState, productsReducer } from "../reducers/products";
-import { Props } from "../types";
+import {
+  Product,
+  ProductState,
+  initialState,
+  productsReducer,
+} from "../reducers/products";
 
-const ProductsContext = createContext(initialState);
+const ProductsContext = createContext<
+  ProductState & {
+    updateProducts: (products: Product[]) => void;
+    updateShowProducts: (showProducts: boolean) => void;
+  }
+>({ ...initialState, updateProducts: () => {}, updateShowProducts: () => {} });
 
-export const ProductsProvider: React.FC<Props> = ({ children }: Props) => {
-  // export function ProductsProvider({ children }) {
+export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
   const updateProducts = useCallback((products) => {
@@ -42,7 +50,6 @@ export const ProductsProvider: React.FC<Props> = ({ children }: Props) => {
 
 export const useProducts = () => {
   const context = useContext(ProductsContext);
-  console.log("context", context);
 
   if (context === undefined) {
     throw new Error("useProducts must be used within ProductsContext");

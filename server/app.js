@@ -5,6 +5,9 @@ const PORT = 3035;
 
 function getProducts(name = "", res) {
   const responseData = data.filter((item) =>
+    // for a more robust search, use:
+    // item.name.toLowerCase().includes(name.toLowerCase())
+    // for testing speed I chose to use startsWith
     item.name.toLowerCase().startsWith(name.toLowerCase())
   );
   res.writeHead(200, {
