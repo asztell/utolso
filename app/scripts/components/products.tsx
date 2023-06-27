@@ -14,10 +14,8 @@ export function Products() {
     updateShowProducts(false);
   }, [updateShowProducts]);
 
-  const numberOfProductsDisplayed: number = useMemo(
-    () => (products.length > 4 ? 4 : products.length),
-    [products.length]
-  );
+  const numberOfProductsDisplayed = products.length > 4 ? 4 : products.length;
+
   if (!showProducts) {
     return null;
   }
