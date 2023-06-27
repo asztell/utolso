@@ -1,5 +1,5 @@
 .Search {
-  flex: 0 1 12%;
+  flex: 0 1 11%;
   display: flex;
 
   & > input {
@@ -8,7 +8,7 @@
     border-radius: 50px;
     border: navajowhite;
     color: black;
-    font-family: ano-bold_regular, Helvetica, Arial, sans-serif;
+    font-family: $mainFontBold;
     height: 30px;
     outline: none;
     padding-left: 10px;
@@ -21,7 +21,7 @@
 }
 
 .SearchResultsSummary {
-  font-family: ano-regular, Helvetica, Arial, sans-serif;
+  font-family: $mainFont;
   font-size: 12px;
   font-weight: 100;
   margin-bottom: 40px;

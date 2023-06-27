@@ -1,7 +1,8 @@
 $siteWidth: 1440px;
+$mainFont: ano-regular, Helvetica, Arial, sans-serif;
+$mainFontBold: ano-bold_regular, Helvetica, Arial, sans-serif;
 
 @import "_menu.scss";
-@import "_home.scss";
 @import "_search.scss";
 @import "_products.scss";
 
@@ -13,6 +14,8 @@ $siteWidth: 1440px;
   display: flex;
 }
 
+// I chose PascalCase for all components
+// because it's easier to match the component name with the class name
 .App {
   width: 100%;
   flex-grow: 1;
@@ -20,14 +23,20 @@ $siteWidth: 1440px;
 }
 
 .Content {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 9%;
+  margin-right: 9%;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-@media (max-width: 1450px) {
+// this is only for local testing, to make sure the site is somewhat responsive
+// when the browser window is resized to see the developer tools;
+// the css would benefit from a few good media queries
+// to make the site more responsive;
+// flexbox is a great additional tool for this
+// which I have used for most of the layout work;
+@media (max-width: $siteWidth) {
   .Content {
     margin-left: 0;
     margin-right: 0;

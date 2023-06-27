@@ -1,25 +1,18 @@
-import * as React from "react";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-
+import React from "react";
+import { IntlProvider } from "react-intl";
+import messages from "../intl/en_US.json";
 import { Menu } from "./components/menu";
 import { Home } from "./components/home";
 
-function App() {
+export function App() {
   return (
-    <div className="App box">
-      <div className="Content box">
-        <Menu />
-        <Home />
+    <IntlProvider locale={navigator.language} messages={messages}>
+      <div className="App box">
+        <div className="Content box">
+          <Menu />
+          <Home />
+        </div>
       </div>
-    </div>
+    </IntlProvider>
   );
 }
-
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);

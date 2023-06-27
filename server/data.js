@@ -40,16 +40,6 @@ var data = [
     tags: ["ojon", "oil", "shampoo"],
   },
   {
-    _id: "005",
-    isActive: "true",
-    price: "7.00",
-    picture: "/img/products/N0H101_430.png",
-    name: "Color Sustain Pro",
-    about:
-      "Dolor voluptate velit consequat duis. Aute ad officia fugiat esse anim exercitation voluptate excepteur pariatur sit culpa duis qui esse. Labore amet ad eu veniam nostrud minim labore aliquip est sint voluptate nostrud reprehenderit. Ipsum nostrud culpa consequat reprehenderit.",
-    tags: ["ojon", "treatment"],
-  },
-  {
     _id: "006",
     isActive: "true",
     price: "38.00",
@@ -68,16 +58,6 @@ var data = [
     about:
       "Dolor voluptate velit consequat duis. Aute ad officia fugiat esse anim exercitation voluptate excepteur pariatur sit culpa duis qui esse. Labore amet ad eu veniam nostrud minim labore aliquip est sint voluptate nostrud reprehenderit. Ipsum nostrud culpa consequat reprehenderit.",
     tags: ["ojon", "treatment"],
-  },
-  {
-    _id: "008",
-    isActive: "true",
-    price: "27.00",
-    picture: "/img/products/N0PL01_430.png",
-    name: "Super Sleek Conditioner",
-    about:
-      "Dolor voluptate velit consequat duis. Aute ad officia fugiat esse anim exercitation voluptate excepteur pariatur sit culpa duis qui esse. Labore amet ad eu veniam nostrud minim labore aliquip est sint voluptate nostrud reprehenderit. Ipsum nostrud culpa consequat reprehenderit.",
-    tags: ["ojon", "conditioner"],
   },
   {
     _id: "009",
@@ -268,16 +248,6 @@ var data = [
     about:
       "Dolor voluptate velit consequat duis. Aute ad officia fugiat esse anim exercitation voluptate excepteur pariatur sit culpa duis qui esse. Labore amet ad eu veniam nostrud minim labore aliquip est sint voluptate nostrud reprehenderit. Ipsum nostrud culpa consequat reprehenderit.",
     tags: ["ojon", "treatment"],
-  },
-  {
-    _id: "028",
-    isActive: "true",
-    price: "27.00",
-    picture: "/img/products/N0PL01_430.png",
-    name: "Super Sleek Conditioner",
-    about:
-      "Dolor voluptate velit consequat duis. Aute ad officia fugiat esse anim exercitation voluptate excepteur pariatur sit culpa duis qui esse. Labore amet ad eu veniam nostrud minim labore aliquip est sint voluptate nostrud reprehenderit. Ipsum nostrud culpa consequat reprehenderit.",
-    tags: ["ojon", "conditioner"],
   },
   {
     _id: "029",

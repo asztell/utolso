@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+import { FormattedMessage } from "react-intl";
 import { Search } from "./search";
 import { Products } from "./products";
 import { ProductsProvider } from "../contexts/products";
@@ -29,29 +30,27 @@ export function Menu() {
 function Nav() {
   return (
     <nav className="Nav box">
+      {/* all these anchor tags would normally be Link components from react-router-dom, etc. */}
       <a href="#" className="NavItem NavItemRed">
-        SALE UPON SALE
+        <FormattedMessage id="Nav.NavItem.Sale" />
       </a>
       <a href="#" className="NavItem">
-        HOLIDAY
+        <FormattedMessage id="Nav.NavItem.Holiday" />
       </a>
       <a href="#" className="NavItem">
-        NEW
+        <FormattedMessage id="Nav.NavItem.New" />
       </a>
       <a href="#" className="NavItem">
-        PRODUCTS
+        <FormattedMessage id="Nav.NavItem.Products" />
       </a>
       <a href="#" className="NavItem">
-        BEST-SELLERS
+        <FormattedMessage id="Nav.NavItem.Best-Sellers" />
       </a>
       <a href="#" className="NavItem">
-        GOODBYES
+        <FormattedMessage id="Nav.NavItem.Goodbyes" />
       </a>
       <a href="#" className="NavItem">
-        STORES
-      </a>
-      <a href="#" className="NavItem">
-        INSPIRATION
+        <FormattedMessage id="Nav.NavItem.Inspiration" />
       </a>
     </nav>
   );
@@ -63,7 +62,7 @@ function Logo() {
       className="Logo box"
       src="/img/mac_logo.svg
       "
-      alt=""
+      alt="M.A.C. Cosmetics"
     />
   );
 }
@@ -71,9 +70,10 @@ function Logo() {
 function PromoStrip() {
   return (
     <span className="PromoStrip box">
-      COOL ADVERTISING WITH PROMOTIONS AND SALES!
+      <FormattedMessage id="PromoStrip.Promo.Text" />
       <a href="#" className="PromoURL">
-        SIGN UP
+        {/* lol I'm sure there is a better way to do this */}{" "}
+        <FormattedMessage id="PromoStrip.URL.Text" />
       </a>
     </span>
   );

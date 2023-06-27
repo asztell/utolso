@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { ReactNode } from "react";
 import {
   createContext,
   useReducer,
@@ -6,13 +6,28 @@ import {
   useCallback,
   useMemo,
 } from "react";
-import { initialState, productsReducer } from "../reducers/products";
-import { Props } from "../types";
+import {
+  Product,
+  ProductState,
+  initialState,
+  productsReducer,
+} from "../reducers/products";
 
-const ProductsContext = createContext(initialState);
+export const ProductsContext = createContext<
+  ProductState & {
+    updateProducts: (products: Product[]) => void;
+    updateShowProducts: (showProducts: boolean) => void;
+  }
+>({
+  ...initialState,
+  // not sure how else to define these functions
+  // without adding them to the reducer and then ignoring them in the coverage report;
+  // and for some reason these ignores don't work in the coverage report
+  /* istanbul ignore next */ updateProducts: () => {},
+  /* istanbul ignore next */ updateShowProducts: () => {},
+});
 
-export const ProductsProvider: React.FC<Props> = ({ children }: Props) => {
-  // export function ProductsProvider({ children }) {
+export const ProductsProvider = ({ children }): ReactNode => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
   const updateProducts = useCallback((products) => {
@@ -42,7 +57,6 @@ export const ProductsProvider: React.FC<Props> = ({ children }: Props) => {
 
 export const useProducts = () => {
   const context = useContext(ProductsContext);
-  console.log("context", context);
 
   if (context === undefined) {
     throw new Error("useProducts must be used within ProductsContext");

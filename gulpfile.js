@@ -158,7 +158,7 @@ function scripts() {
 
   // Return the task
   return gulp
-    .src("./app/scripts/main.tsx")
+    .src("./app/scripts/index.tsx")
     .pipe(webpack(webpack_config_dev))
     .on("error", errorLog)
     .pipe(gulp.dest("./" + _devFolder + "/js/"))
@@ -277,6 +277,8 @@ function watchTask() {
       "./app/scripts/**/*.js",
       "./app/scripts/**/*.tsx",
       "./app/scripts/**/*.ts",
+      "!./app/scripts/**/*.test.tsx",
+      "!./app/scripts/**/*.test.ts",
     ],
     gulp.series(scripts, browserSyncReload)
   );

@@ -1,0 +1,14 @@
+{
+  "Nav.NavItem.Sale": "SALE UPON SALE",
+  "Nav.NavItem.Holiday": "HOLIDAY",
+  "Nav.NavItem.New": "NEW",
+  "Nav.NavItem.Products": "PRODUCTS",
+  "Nav.NavItem.Best-Sellers": "BEST-SELLERS",
+  "Nav.NavItem.Goodbyes": "GOODBYES",
+  "Nav.NavItem.Inspiration": "INSPIRATION",
+  "PromoStrip.Promo.Text": "COOL ADVERTISING WITH PROMOTIONS AND SALES!",
+  "PromoStrip.URL.Text": "SIGN UP",
+  "SearchInput.Placeholder": "SEARCH",
+  "SearchResultsSummary.Displayed": "DISPLAYING {displayed} OF {total} RESULTS",
+  "SearchResultsSummary.Total": "SEE ALL RESULTS"
+}

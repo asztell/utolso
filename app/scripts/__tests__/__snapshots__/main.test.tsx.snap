@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> render App 1`] = `
+<div>
+  <div
+    class="App box"
+  >
+    <div
+      class="Content box"
+    >
+      <header
+        class="Menu box"
+      >
+        <div
+          class="MenuContent box"
+        >
+          <img
+            alt="M.A.C. Cosmetics"
+            class="Logo box"
+            src="/img/mac_logo.svg
+      "
+          />
+          <span
+            class="PromoStrip box"
+          >
+            COOL ADVERTISING WITH PROMOTIONS AND SALES!
+            <a
+              class="PromoURL"
+              href="#"
+            >
+               
+              SIGN UP
+            </a>
+          </span>
+          <div
+            class="Search box"
+          >
+            <input
+              placeholder="SEARCH"
+              type="text"
+            />
+          </div>
+          <a
+            class="MyMacLink"
+            href="#"
+          >
+            <img
+              alt="My MAC"
+              src="/img/my_mac.png"
+            />
+          </a>
+          <a
+            class="ShoppingCartLink"
+            href="#"
+          >
+            <img
+              alt="Shopping Cart"
+              src="/img/shopping_cart.png"
+            />
+          </a>
+        </div>
+        <nav
+          class="Nav box"
+        >
+          <a
+            class="NavItem NavItemRed"
+            href="#"
+          >
+            SALE UPON SALE
+          </a>
+          <a
+            class="NavItem"
+            href="#"
+          >
+            HOLIDAY
+          </a>
+          <a
+            class="NavItem"
+            href="#"
+          >
+            NEW
+          </a>
+          <a
+            class="NavItem"
+            href="#"
+          >
+            PRODUCTS
+          </a>
+          <a
+            class="NavItem"
+            href="#"
+          >
+            BEST-SELLERS
+          </a>
+          <a
+            class="NavItem"
+            href="#"
+          >
+            GOODBYES
+          </a>
+          <a
+            class="NavItem"
+            href="#"
+          >
+            INSPIRATION
+          </a>
+        </nav>
+      </header>
+      <section
+        class="PageContent"
+      />
+    </div>
+  </div>
+</div>
+`;
