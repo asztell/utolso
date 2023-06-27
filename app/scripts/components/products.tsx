@@ -10,7 +10,7 @@ export function Products() {
   // but for a prod implementation I would want to consult a UX designer
   // to see what they think is best
   const onMouseLeave = useCallback(() => {
-    // updateShowProducts(false);
+    updateShowProducts(false);
   }, [updateShowProducts]);
 
   const numberOfProductsDisplayed = products.length > 4 ? 4 : products.length;
