@@ -22,7 +22,7 @@ export function Search() {
     //    to avoid making requests that will return no results
     // 6. I might also remove this function from this component and move it to a utils file
     //    to make it easier to test and reuse if necessary
-    async ({ target: { value } }) => {
+    async ({ target: { value } }: { target: { value: string } }) => {
       try {
         const products: Product[] = await fetchProductsByName(value);
         updateProducts(products);
@@ -41,8 +41,11 @@ export function Search() {
   );
 
   return (
-    <div className="Search box">
-      <input type="text" onChange={onSearch} placeholder={placeholder} />
-    </div>
+    <>
+      <div className="Search box">
+        <input type="text" onChange={onSearch} placeholder={placeholder} />
+      </div>
+      {/* <Products /> */}
+    </>
   );
 }

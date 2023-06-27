@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -120,8 +120,7 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -133,8 +132,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -160,8 +158,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,7 +178,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { FormattedMessage } from "react-intl";
 import { useProducts } from "../contexts/products";
 &nbsp;
@@ -190,19 +188,18 @@ export function Products() {
   // to close the dropdown,
   // but for a prod implementation I would want to consult a UX designer
   // to see what they think is best
-  const onMouseLeave = useCallback(<span class="fstat-no" title="function not covered" >() =</span>&gt; {
-<span class="cstat-no" title="statement not covered" >    console.log("mouse leave");</span>
-<span class="cstat-no" title="statement not covered" >    updateShowProducts(false);</span>
+  const onMouseLeave = useCallback(() =&gt; {
+    // updateShowProducts(false);
   }, [updateShowProducts]);
 &nbsp;
-  const numberOfProductsDisplayed = products.length &gt; 4 ? <span class="branch-0 cbranch-no" title="branch not covered" >4 </span>: products.length;
+  const numberOfProductsDisplayed = products.length &gt; 4 ? 4 : products.length;
 &nbsp;
   if (!showProducts) {
     return null;
   }
 &nbsp;
   return (
-    &lt;section&gt;
+    &lt;section className="SearchResults" onMouseLeave={onMouseLeave}&gt;
       &lt;h2 className="SearchResultsSummary"&gt;
         &lt;FormattedMessage
           id="SearchResultsSummary.Displayed"
@@ -216,7 +213,7 @@ export function Products() {
         &lt;/a&gt;
       &lt;/h2&gt;
       &lt;hr /&gt;
-      &lt;ul onMouseLeave={onMouseLeave} className="SearchResults"&gt;
+      &lt;ul className="SearchResultItems"&gt;
         {products.slice(0, 4).map((product) =&gt; {
           const { _id, picture, name, about } = product;
           return (
@@ -225,7 +222,7 @@ export function Products() {
             &lt;a key={_id} href="#"&gt;
               &lt;li className="ProductCard"&gt;
                 &lt;img src={picture} /&gt;
-                &lt;div className="product-info"&gt;
+                &lt;div&gt;
                   &lt;h3&gt;{name.toUpperCase()}&lt;/h3&gt;
                   &lt;p&gt;{about}&lt;/p&gt;
                 &lt;/div&gt;
@@ -244,7 +241,7 @@ export function Products() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-27T14:50:28.579Z
+                at 2023-06-27T21:24:21.710Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

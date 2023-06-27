@@ -9,7 +9,7 @@ import {
 const baseUrl = ROOT_URL + PRODUCTS_URL;
 
 describe("services", () => {
-  let fetchSpy;
+  let fetchSpy: jest.SpyInstance;
   beforeAll(() => {
     fetchSpy = jest.spyOn(global, "fetch");
   });

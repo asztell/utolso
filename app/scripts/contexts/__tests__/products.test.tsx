@@ -1,6 +1,11 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { render } from "@testing-library/react";
-import { ProductsContext, ProductsProvider, useProducts } from "../products";
+import {
+  ProductsContext,
+  ProductsProvider,
+  useProducts,
+  emptyFunction,
+} from "../products";
 import { initialState } from "../../reducers/products";
 
 jest.mock("react", () => {
@@ -117,6 +122,10 @@ describe("<ProductsProvider />", () => {
         type: "UPDATE_SHOW_PRODUCTS",
         payload: newShowProducts,
       });
+    });
+
+    it('facilitates the use of "emptyFunction"', () => {
+      expect(emptyFunction()).toBe(null);
     });
   });
 });

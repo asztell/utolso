@@ -13,6 +13,10 @@ import {
   productsReducer,
 } from "../reducers/products";
 
+export function emptyFunction() {
+  return null;
+}
+
 export const ProductsContext = createContext<
   ProductState & {
     updateProducts: (products: Product[]) => void;
@@ -23,18 +27,24 @@ export const ProductsContext = createContext<
   // not sure how else to define these functions
   // without adding them to the reducer and then ignoring them in the coverage report;
   // and for some reason these ignores don't work in the coverage report
-  /* istanbul ignore next */ updateProducts: () => {},
-  /* istanbul ignore next */ updateShowProducts: () => {},
+  /* istanbul ignore next */
+  updateProducts: emptyFunction,
+  /* istanbul ignore next */
+  updateShowProducts: emptyFunction,
 });
 
-export const ProductsProvider = ({ children }): ReactNode => {
+export const ProductsProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}): ReactNode => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
-  const updateProducts = useCallback((products) => {
+  const updateProducts = useCallback((products: Product[]) => {
     dispatch({ type: "UPDATE_PRODUCTS", payload: products });
   }, []);
 
-  const updateShowProducts = useCallback((showProducts) => {
+  const updateShowProducts = useCallback((showProducts: boolean) => {
     dispatch({ type: "UPDATE_SHOW_PRODUCTS", payload: showProducts });
   }, []);
 

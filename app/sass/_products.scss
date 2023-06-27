@@ -1,4 +1,11 @@
 .SearchResults {
+  position: absolute;
+  background-color: white;
+  margin-top: 100px;
+  margin-right: inherit;
+}
+
+.SearchResultItems {
   display: flex;
   align-content: flex-start;
   justify-content: flex-start;
@@ -10,7 +17,7 @@
   }
 }
 
-.SearchResults a {
+.SearchResultItems a {
   display: flex;
   flex-basis: 25%;
 }

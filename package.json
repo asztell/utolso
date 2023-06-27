@@ -76,7 +76,7 @@
       "!<rootDir>/app/scripts/index.tsx"
     ],
     "setupFiles": [
-      "./setupTests.ts"
+      "./app/scripts/setupTests.ts"
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
