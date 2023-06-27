@@ -14,7 +14,7 @@ export function Products() {
     updateShowProducts(false);
   }, [updateShowProducts]);
 
-  const numberOfProductsDisplayed = useMemo(
+  const numberOfProductsDisplayed: number = useMemo(
     () => (products.length > 4 ? 4 : products.length),
     [products.length]
   );
@@ -39,15 +39,16 @@ export function Products() {
       <hr />
       <ul onMouseLeave={onMouseLeave} className="SearchResults">
         {products.slice(0, 4).map((product) => {
+          const { _id, picture, name, about } = product;
           return (
             // this anchor tag would normally be a Link component from react-router-dom, etc.
             // pointing to all search results page
-            <a key={product._id} href="#">
+            <a key={_id} href="#">
               <li className="ProductCard">
-                <img src={product.picture} />
+                <img src={picture} />
                 <div className="product-info">
-                  <h3>{product.name.toUpperCase()}</h3>
-                  <p>{product.about}</p>
+                  <h3>{name.toUpperCase()}</h3>
+                  <p>{about}</p>
                 </div>
               </li>
             </a>

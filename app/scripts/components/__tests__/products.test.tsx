@@ -4,10 +4,13 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ProductsProvider, useProducts } from "../../contexts/products";
 import { Products } from "../products";
 
-jest.mock("../../contexts/products", () => ({
-  ...jest.requireActual("../../contexts/products"),
-  useProducts: jest.fn(),
-}));
+jest.mock("../../contexts/products", () => {
+  const actual = jest.requireActual("../../contexts/products");
+  return {
+    ...actual,
+    useProducts: jest.fn(),
+  };
+});
 
 describe("<Products />", () => {
   afterEach(() => {

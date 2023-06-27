@@ -1,10 +1,9 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ProductsProvider } from "../../contexts/products";
 import { Search } from "../search";
 import * as services from "../../utils/services";
-import { act } from "react-dom/test-utils";
 
 jest.mock("../../utils/services");
 
@@ -31,7 +30,7 @@ describe("<Search />", () => {
         </ProductsProvider>
       </IntlProvider>
     );
-    await act(async () => {
+    await waitFor(() => {
       fireEvent.change(screen.getByPlaceholderText("test SEARCH"), {
         target: { value: "t" },
       });
@@ -58,7 +57,7 @@ describe("<Search />", () => {
         </ProductsProvider>
       </IntlProvider>
     );
-    await act(async () => {
+    await waitFor(() => {
       fireEvent.change(screen.getByPlaceholderText("test SEARCH"), {
         target: { value: "t" },
       });

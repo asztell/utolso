@@ -79,11 +79,9 @@ describe("productsReducer", () => {
       showProducts: true,
     };
     const action = {
-      type: "default",
+      type: "default" as any,
       payload: undefined,
     };
-    // I don't think the default case is even possible with typescript...
-    // @ts-ignore
     const result = productsReducer(state, action);
     expect(result).toEqual({
       products: [],

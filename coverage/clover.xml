@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687789202218" clover="3.2.0">
-  <project timestamp="1687789202218" name="All files">
-    <metrics statements="92" coveredstatements="90" conditionals="7" coveredconditionals="6" methods="26" coveredmethods="23" elements="125" coveredelements="119" complexity="0" loc="92" ncloc="92" packages="5" files="8" classes="8"/>
+<coverage generated="1687875746327" clover="3.2.0">
+  <project timestamp="1687875746327" name="All files">
+    <metrics statements="93" coveredstatements="91" conditionals="7" coveredconditionals="6" methods="26" coveredmethods="23" elements="126" coveredelements="120" complexity="0" loc="93" ncloc="93" packages="5" files="8" classes="8"/>
     <package name="scripts">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="main.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/main.tsx">
@@ -16,7 +16,7 @@
       </file>
     </package>
     <package name="scripts.components">
-      <metrics statements="48" coveredstatements="46" conditionals="3" coveredconditionals="2" methods="15" coveredmethods="14"/>
+      <metrics statements="49" coveredstatements="47" conditionals="3" coveredconditionals="2" methods="15" coveredmethods="14"/>
       <file name="home.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/components/home.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
@@ -39,7 +39,7 @@
         <line num="91" count="2" type="stmt"/>
       </file>
       <file name="products.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/components/products.tsx">
-        <metrics statements="15" coveredstatements="13" conditionals="3" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <metrics statements="16" coveredstatements="14" conditionals="3" coveredconditionals="2" methods="4" coveredmethods="3"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -55,6 +55,7 @@
         <line num="22" count="2" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
         <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
       </file>
       <file name="search.tsx" path="/Users/arpad/Downloads/utolso/app/scripts/components/search.tsx">
         <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -63,19 +64,19 @@
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
         <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="34" count="5" type="stmt"/>
-        <line num="35" count="4" type="stmt"/>
-        <line num="39" count="5" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
       </file>
     </package>
     <package name="scripts.contexts">

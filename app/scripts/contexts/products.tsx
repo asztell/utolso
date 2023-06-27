@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   createContext,
   useReducer,
@@ -27,7 +27,7 @@ export const ProductsContext = createContext<
   /* istanbul ignore next */ updateShowProducts: () => {},
 });
 
-export const ProductsProvider = ({ children }) => {
+export const ProductsProvider = ({ children }): ReactNode => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
   const updateProducts = useCallback((products) => {
