@@ -39,3 +39,8 @@
 [28/6/2023 -- 11:2]  Mustache Templates ran on the HTML files
 [28/6/2023 -- 11:2]  Scripts ran on main.js
 [28/6/2023 -- 11:3]  Sass ran on files
+[28/6/2023 -- 11:4]  restarted!
+[28/6/2023 -- 11:5]  Info task started
+[28/6/2023 -- 11:5]  Mustache Templates ran on the HTML files
+[28/6/2023 -- 11:5]  Scripts ran on main.js
+[28/6/2023 -- 11:5]  Sass ran on files

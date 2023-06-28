@@ -1,5 +1,5 @@
 import { readFile } from "fs/promises";
-import * as http from "http";
+import http from "http";
 const HOST = "localhost";
 const PORT = 3035;
 
