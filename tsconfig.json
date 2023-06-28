@@ -106,7 +106,13 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "exclude": ["node_modules", "audit", "config", "app/scripts/setupTests.ts"],
+  "exclude": [
+    "node_modules",
+    "audit",
+    // "config/general*",
+    // "config/template*",
+    "app/scripts/setupTests.ts"
+  ],
   // "target": "es2015",
   "lib": ["ESNext", "dom"]
 }

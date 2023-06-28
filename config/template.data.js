@@ -6,6 +6,9 @@
  *
  */
 
-module.exports = {
+// module.exports = {
+const data = {
   title: "Arpad's Web Starter Template",
 };
+
+export default data;

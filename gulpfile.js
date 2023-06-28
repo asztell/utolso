@@ -5,39 +5,62 @@
 
 // Configs
 // Webpack Configs
-const config = require("./config/general.config.js");
-const webpack_config_dev = require("./config/webpack.config.js");
-const template_config = require("./config/template.data.js");
+// const config = require("./config/general.config.js");
+// const webpack_config_dev = require("./config/webpack.config.js");
+// const template_config = require("./config/template.data.js");
+import * as config from "./config/general.config.js";
+// import * as webpack_config_dev from "./config/webpack.config.ts";
+import webpack_config_dev from "./config/webpack.config.js";
+import * as template_config from "./config/template.data.js";
 
 // The gulp task runner
-const gulp = require("gulp");
+// const gulp = require("gulp");
+import gulp from "gulp";
 
 // CSS
-const sass = require("gulp-sass")(require("sass"));
-const prefix = require("gulp-autoprefixer");
-const sourcemaps = require("gulp-sourcemaps");
+// const sass = require("gulp-sass")(require("sass"));
+// const prefix = require("gulp-autoprefixer");
+// const sourcemaps = require("gulp-sourcemaps");
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+import prefix from "gulp-autoprefixer";
+import sourcemaps from "gulp-sourcemaps";
 
 //Node Server
-const nodemon = require("nodemon");
+// const nodemon = require("nodemon");
+// import * as nodemon from "nodemon";
+import nodemon from "nodemon";
 
 // Images
-const imagemin = require("gulp-imagemin");
+// const imagemin = require("gulp-imagemin");
+import imagemin from "gulp-imagemin";
 
 // HTML Templating, we use mustache to ensure it works with the Live Drupal site
-const mustache = require("gulp-mustache");
+// const mustache = require("gulp-mustache");
+import mustache from "gulp-mustache";
 
 // Javasript - WebPack Version
-const webpack = require("webpack-stream");
-const babel = require("gulp-babel");
-const uglify = require("gulp-uglify");
+// const webpack = require("webpack-stream");
+// const babel = require("gulp-babel");
+// const uglify = require("gulp-uglify");
+import webpack from "webpack-stream";
+import * as babel from "gulp-babel";
+import * as uglify from "gulp-uglify";
 
 // Browser Sync to auto refresh and keep things quick
-const browserSync = require("browser-sync").create();
+// const browserSync = require("browser-sync").create();
+import * as browserSyncModule from "browser-sync";
+const browserSync = browserSyncModule.create();
 
 // General Use Packages
-const rename = require("gulp-rename");
-const fs = require("fs");
-const git = require("gulp-git");
+// const rename = require("gulp-rename");
+// const fs = require("fs");
+// const git = require("gulp-git");
+import rename from "gulp-rename";
+import * as fs from "fs";
+import git from "gulp-git";
+
+const sass = gulpSass(dartSass);
 
 // Global
 // Can be set either Dynamically using a date stamp
@@ -118,7 +141,7 @@ function infoLog($message) {
 =====================================*/
 
 // Sass Task Runner
-function sassTask() {
+export function sassTask() {
   // Log this change
   infoLog("Sass ran on files");
 
@@ -240,7 +263,7 @@ function vendorWC() {
 
 // Clear out metadata from Photohshop Images and Shrink em' Down, has to be self exectued
 // as there are a few bugs with del and watching etc.
-function images() {
+export function images() {
   // Log this change
   infoLog("Image Minification ran");
 
@@ -289,7 +312,7 @@ function watchTask() {
   );
 }
 
-const watch = gulp.parallel(
+export const watch = gulp.parallel(
   gulp.series(
     images,
     mustacheTask,
@@ -300,9 +323,9 @@ const watch = gulp.parallel(
   ),
   server
 );
-exports.watch = watch;
+// exports.watch = watch;
 
-const dev_server = gulp.series(
+export const dev_server = gulp.series(
   images,
   mustacheTask,
   scripts,
@@ -310,16 +333,17 @@ const dev_server = gulp.series(
   browserSyncServe,
   watchTask
 );
-exports.dev_server = dev_server;
+// exports.dev_server = dev_server;
 
-const compile = gulp.series(images, mustacheTask, scripts, sassTask);
-exports.compile = compile;
+export const compile = gulp.series(images, mustacheTask, scripts, sassTask);
+// exports.compile = compile;
 
-const vendor = gulp.series(vendorJS, vendorCSS, vendorWC);
-exports.vendor = vendor;
+export const vendor = gulp.series(vendorJS, vendorCSS, vendorWC);
+// exports.vendor = vendor;
 
-exports.images = images;
-exports.sass = sassTask;
+// exports.images = images;
+// exports.sass = sassTask;
+// export const sass = sassTask;
 
 function prodJS() {
   // Log this change
@@ -360,7 +384,7 @@ function prodHTML() {
     .pipe(gulp.dest("./" + _prodFolder + "/"));
 }
 
-const prod = gulp.series(
+export const prod = gulp.series(
   images,
   mustacheTask,
   scripts,
@@ -369,4 +393,4 @@ const prod = gulp.series(
   prodCSS,
   prodHTML
 );
-exports.prod = prod;
+// exports.prod = prod;

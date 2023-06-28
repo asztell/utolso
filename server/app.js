@@ -1,7 +1,13 @@
-const data = require("./data");
-const http = require("http");
+// const data = require("./data");
+import { readFile } from "fs/promises";
+// const http = require("http");
+import * as http from "http";
 const HOST = "localhost";
 const PORT = 3035;
+
+const data = await readFile("./server/data.json", "utf8").then((data) => {
+  return JSON.parse(data.toString());
+});
 
 function getProducts(name = "", res) {
   const responseData = data.filter((item) =>
