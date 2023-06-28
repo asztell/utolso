@@ -4,11 +4,8 @@
  *
  * This version will include SourceMaps, Uncompressed JS and HMR.
  */
-// const webpack = require("webpack");
-// import * as webpack from "webpack";
 import webpack from "webpack";
 
-// module.exports = {
 const webpack_config_dev = {
   mode: "none",
 
