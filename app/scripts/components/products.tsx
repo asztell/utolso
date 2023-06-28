@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import { FormattedMessage } from "react-intl";
 import { useProducts } from "../contexts/products";
 
+// as an alternative this component could be implemented with react-dom/createPortal
 export function Products() {
   const { products, showProducts, updateShowProducts } = useProducts();
   // I chose mouseleave because it seemed like the most intuitive way

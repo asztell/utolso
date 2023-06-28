@@ -1242,3 +1242,11 @@
 [27/6/2023 -- 22:41]  Scripts ran on main.js
 [27/6/2023 -- 22:47]  Scripts ran on main.js
 [27/6/2023 -- 22:50]  Scripts ran on main.js
+[27/6/2023 -- 23:23]  Sass ran on files
+[27/6/2023 -- 23:23]  Sass ran on files
+[27/6/2023 -- 23:31]  Scripts ran on main.js
+[28/6/2023 -- 0:49]  Scripts ran on main.js
+[28/6/2023 -- 0:50]  Info task started
+[28/6/2023 -- 0:50]  Mustache Templates ran on the HTML files
+[28/6/2023 -- 0:50]  Scripts ran on main.js
+[28/6/2023 -- 0:51]  Sass ran on files
