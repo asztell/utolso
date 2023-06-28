@@ -5,9 +5,13 @@
 
 // Configs
 // Webpack Configs
-import * as config from "./config/general.config.js";
 import webpack_config_dev from "./config/webpack.config.js";
-import * as template_config from "./config/template.data.js";
+
+// General Configs
+import { config } from "./config/general.config.js";
+
+// Template Configs
+import { template_config } from "./config/template.data.js";
 
 // The gulp task runner
 import gulp from "gulp";
@@ -29,16 +33,16 @@ import mustache from "gulp-mustache";
 
 // Javasript - WebPack Version
 import webpack from "webpack-stream";
-import * as babel from "gulp-babel";
-import * as uglify from "gulp-uglify";
+import babel from "gulp-babel";
+import uglify from "gulp-uglify";
 
 // Browser Sync to auto refresh and keep things quick
-import * as browserSyncModule from "browser-sync";
+import browserSyncModule from "browser-sync";
 const browserSync = browserSyncModule.create();
 
 // General Use Packages
 import rename from "gulp-rename";
-import * as fs from "fs";
+import fs from "fs";
 import git from "gulp-git";
 
 const sass = gulpSass(dartSass);
