@@ -13,6 +13,7 @@ import {
   productsReducer,
 } from "../reducers/products";
 
+// allows removal of the function defitions from the param list
 export function emptyFunction() {
   return null;
 }

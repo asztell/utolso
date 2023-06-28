@@ -124,7 +124,7 @@ describe("<ProductsProvider />", () => {
       });
     });
 
-    it('facilitates the use of "emptyFunction"', () => {
+    it("emptyFunction returns null", () => {
       expect(emptyFunction()).toBe(null);
     });
   });
