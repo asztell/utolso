@@ -5,3 +5,4 @@ coverage
 .local_server
 .idea/
 audit
+logs
