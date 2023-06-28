@@ -45,7 +45,6 @@ export function Search() {
       <div className="Search box">
         <input type="text" onChange={onSearch} placeholder={placeholder} />
       </div>
-      {/* <Products /> */}
     </>
   );
 }
