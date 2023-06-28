@@ -1,8 +1,8 @@
 .DS_STORE
 .eslintrc.json
-node_modules
-coverage
-.local_server
 .idea/
+.local_server
 audit
+coverage
 logs
+node_modules
