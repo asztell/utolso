@@ -1,6 +1,4 @@
-// const data = require("./data");
 import { readFile } from "fs/promises";
-// const http = require("http");
 import * as http from "http";
 const HOST = "localhost";
 const PORT = 3035;
