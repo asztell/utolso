@@ -1,9 +1,5 @@
 "use strict";
-/**
- *
- * File is used to setup the General project
- *
- */
+// Configs
 
 export const config = {
   development_folder: ".local_server",
