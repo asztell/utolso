@@ -42,11 +42,11 @@ export const ProductsProvider = ({
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
   const updateProducts = useCallback((products: Product[]) => {
-    dispatch({ type: "UPDATE_PRODUCTS", payload: products });
+    dispatch({ type: "UPDATE_PRODUCTS", payload: { products } });
   }, []);
 
   const updateShowProducts = useCallback((showProducts: boolean) => {
-    dispatch({ type: "UPDATE_SHOW_PRODUCTS", payload: showProducts });
+    dispatch({ type: "UPDATE_SHOW_PRODUCTS", payload: { showProducts } });
   }, []);
 
   const value = useMemo(

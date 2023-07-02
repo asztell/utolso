@@ -4,10 +4,19 @@ import { useIntl } from "react-intl";
 import { fetchProductsByName } from "../utils/services";
 import { useProducts } from "../contexts/products";
 import { Product } from "../reducers/products";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export function Search() {
   const { formatMessage } = useIntl();
-  const { updateProducts, updateShowProducts } = useProducts();
+  const { updateProducts } = useProducts();
+  const [search, setSearch] = useLocalStorage({
+    key: "search",
+    initialValue: "",
+  });
+  const [products, setProducts] = useLocalStorage({
+    key: "products",
+    initialValue: () => [],
+  });
 
   const onSearch = useCallback(
     // If I had more time I would do the following:
@@ -23,16 +32,20 @@ export function Search() {
     // 6. I might also remove this function from this component and move it to a utils file
     //    to make it easier to test and reuse if necessary
     async ({ target: { value } }: { target: { value: string } }) => {
+      setSearch(value);
+      // console.log("localStorage.search", search);
       try {
-        const products: Product[] = await fetchProductsByName(value);
-        updateProducts(products);
-        updateShowProducts(true);
+        const response: Product[] = await fetchProductsByName(value);
+        // console.log("response", response);
+        setProducts(JSON.stringify(response));
+        // console.log("localStorage.products", products);
+        updateProducts(response);
       } catch (error) {
         // normally I would use a logger like Sentry to log the error
         console.warn("There was an error", error);
       }
     },
-    [updateProducts, updateShowProducts]
+    [updateProducts]
   );
 
   const placeholder: string = useMemo(

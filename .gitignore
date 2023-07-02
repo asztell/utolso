@@ -2,6 +2,7 @@
 .eslintrc.json
 .idea/
 .local_server
+.quokka
 audit
 coverage
 logs

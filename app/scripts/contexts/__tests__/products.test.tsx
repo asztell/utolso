@@ -106,7 +106,7 @@ describe("<ProductsProvider />", () => {
 
       expect(dispatchMock).toHaveBeenCalledWith({
         type: "UPDATE_PRODUCTS",
-        payload: newProducts,
+        payload: { products: newProducts },
       });
     });
 
@@ -120,7 +120,7 @@ describe("<ProductsProvider />", () => {
 
       expect(dispatchMock).toHaveBeenCalledWith({
         type: "UPDATE_SHOW_PRODUCTS",
-        payload: newShowProducts,
+        payload: { showProducts: newShowProducts },
       });
     });
 
