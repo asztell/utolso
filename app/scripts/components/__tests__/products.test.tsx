@@ -36,7 +36,7 @@ describe("<Products />", () => {
     });
   });
 
-  it("renders", () => {
+  test("renders", () => {
     render(
       <IntlProvider
         locale={navigator.language}
@@ -55,7 +55,7 @@ describe("<Products />", () => {
     expect(element).toBeInTheDocument();
   });
 
-  it("renders", async () => {
+  test("renders", async () => {
     jest.mocked(useProducts).mockReturnValue({
       products: [
         {

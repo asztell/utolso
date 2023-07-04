@@ -26,6 +26,7 @@
     "third-party": "cross-env set NODE_ENV=development&&gulp vendor"
   },
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -40,6 +41,7 @@
     "@testing-library/react": "^14.0.0",
     "@tsconfig/node19": "^2.0.1",
     "@types/jest": "^29.5.2",
+    "@types/lodash.debounce": "^4.0.7",
     "@types/node": "^20.3.2",
     "@types/react": "^18.2.14",
     "@types/webpack": "^5.28.1",

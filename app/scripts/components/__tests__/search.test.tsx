@@ -15,7 +15,7 @@ describe("<Search />", () => {
   // spy on the default export of config
   const fetchProductsByName = jest.spyOn(services, "fetchProductsByName");
 
-  it("renders and fetches successfully", async () => {
+  test("renders and fetches successfully", async () => {
     // replace the implementation
     fetchProductsByName.mockImplementation(() => Promise.resolve([]));
     render(
@@ -38,7 +38,7 @@ describe("<Search />", () => {
     expect(screen.getByPlaceholderText("test SEARCH")).toHaveValue("t");
   });
 
-  it("renders but fetch fails", async () => {
+  test("renders but fetch fails", async () => {
     // replace the implementation with a rejected promise
     fetchProductsByName.mockImplementation(() =>
       Promise.reject(

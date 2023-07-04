@@ -5,6 +5,7 @@ import { fetchProductsByName } from "../utils/services";
 import { useProducts } from "../contexts/products";
 import { Product } from "../reducers/products";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import debounce from "lodash.debounce";
 
 export function Search() {
   const { formatMessage } = useIntl();
@@ -20,7 +21,7 @@ export function Search() {
 
   const onSearch = useCallback(
     // If I had more time I would do the following:
-    // 1. normally I would use debounce to avoid making too many requests
+    // ✓ 1. normally I would use debounce to avoid making too many requests
     // 2. I would also use a loading state to show
     //    - a spinner while the request is being made
     //    - or a template ui while the request is being made
@@ -31,7 +32,11 @@ export function Search() {
     //    to avoid making requests that will return no results
     // 6. I might also remove this function from this component and move it to a utils file
     //    to make it easier to test and reuse if necessary
-    async ({ target: { value } }: { target: { value: string } }) => {
+    async ({
+      target: { value },
+    }: {
+      target: { value: string };
+    }): Promise<void> => {
       setSearch(value);
       // console.log("localStorage.search", search);
       try {
@@ -48,6 +53,11 @@ export function Search() {
     [updateProducts]
   );
 
+  const debouncedOnSearch: React.ChangeEventHandler<HTMLInputElement> = useMemo(
+    () => debounce(onSearch, 300),
+    []
+  );
+
   const placeholder: string = useMemo(
     () => formatMessage({ id: "SearchInput.Placeholder" }),
     [formatMessage]
@@ -56,7 +66,11 @@ export function Search() {
   return (
     <>
       <div className="Search box">
-        <input type="text" onChange={onSearch} placeholder={placeholder} />
+        <input
+          type="text"
+          onChange={debouncedOnSearch}
+          placeholder={placeholder}
+        />
       </div>
     </>
   );
