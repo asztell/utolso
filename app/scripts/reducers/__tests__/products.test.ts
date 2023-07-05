@@ -8,54 +8,38 @@ describe("productsReducer", () => {
   test("UPDATE_PRODUCTS", () => {
     const state = {
       products: [],
-      showProducts: false,
+      showProducts: true,
     };
+    const products = [
+      {
+        _id: "1",
+        isActive: "true",
+        price: "100",
+        picture: "http://placehold.it/32x32",
+        name: "Product 1",
+        about: "Description 1",
+        tags: ["tag1", "tag2"],
+      },
+      {
+        _id: "2",
+        isActive: "true",
+        price: "200",
+        picture: "http://placehold.it/32x32",
+        name: "Product 2",
+        about: "Description 2",
+        tags: ["tag1", "tag2"],
+      },
+    ];
     const action: UpdateProductsAction = {
       type: "UPDATE_PRODUCTS",
-      payload: [
-        {
-          _id: "1",
-          isActive: "true",
-          price: "100",
-          picture: "http://placehold.it/32x32",
-          name: "Product 1",
-          about: "Description 1",
-          tags: ["tag1", "tag2"],
-        },
-        {
-          _id: "2",
-          isActive: "true",
-          price: "200",
-          picture: "http://placehold.it/32x32",
-          name: "Product 2",
-          about: "Description 2",
-          tags: ["tag1", "tag2"],
-        },
-      ],
+      payload: {
+        products,
+      },
     };
     const result = productsReducer(state, action);
     expect(result).toEqual({
-      products: [
-        {
-          _id: "1",
-          isActive: "true",
-          price: "100",
-          picture: "http://placehold.it/32x32",
-          name: "Product 1",
-          about: "Description 1",
-          tags: ["tag1", "tag2"],
-        },
-        {
-          _id: "2",
-          isActive: "true",
-          price: "200",
-          picture: "http://placehold.it/32x32",
-          name: "Product 2",
-          about: "Description 2",
-          tags: ["tag1", "tag2"],
-        },
-      ],
-      showProducts: false,
+      products,
+      showProducts: true,
     });
   });
   test("UPDATE_SHOW_PRODUCTS", () => {
@@ -65,7 +49,7 @@ describe("productsReducer", () => {
     };
     const action: UpdateShowProductsAction = {
       type: "UPDATE_SHOW_PRODUCTS",
-      payload: true,
+      payload: { showProducts: true },
     };
     const result = productsReducer(state, action);
     expect(result).toEqual({
@@ -82,6 +66,8 @@ describe("productsReducer", () => {
       type: "default" as any,
       payload: undefined,
     };
+    // I don't think the default case is even possible with typescript...
+    // @ts-ignore
     const result = productsReducer(state, action);
     expect(result).toEqual({
       products: [],

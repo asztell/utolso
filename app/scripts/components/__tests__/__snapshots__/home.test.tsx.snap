@@ -4,6 +4,8 @@ exports[`<Home /> render Home 1`] = `
 <div>
   <section
     class="PageContent"
-  />
+  >
+    Some page content
+  </section>
 </div>
 `;

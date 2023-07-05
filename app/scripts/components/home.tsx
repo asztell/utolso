@@ -1,5 +1,5 @@
 import React from "react";
 
 export function Home() {
-  return <section className="PageContent"></section>;
+  return <section className="PageContent">Some page content</section>;
 }

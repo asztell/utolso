@@ -108,7 +108,9 @@ exports[`<App /> render App 1`] = `
       </header>
       <section
         class="PageContent"
-      />
+      >
+        Some page content
+      </section>
     </div>
   </div>
 </div>

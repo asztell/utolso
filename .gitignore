@@ -1,7 +1,9 @@
 .DS_STORE
 .eslintrc.json
-node_modules
-.local_server
 .idea/
+.local_server
+.quokka
 audit
 coverage
+logs
+node_modules

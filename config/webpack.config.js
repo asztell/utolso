@@ -4,9 +4,9 @@
  *
  * This version will include SourceMaps, Uncompressed JS and HMR.
  */
-const webpack = require("webpack");
+import webpack from "webpack";
 
-module.exports = {
+const webpack_config_dev = {
   mode: "none",
 
   output: {
@@ -53,3 +53,5 @@ module.exports = {
     extensions: [".js", ".ts", ".jsx", ".tsx"],
   },
 };
+
+export default webpack_config_dev;

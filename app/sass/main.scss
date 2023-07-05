@@ -10,15 +10,15 @@ $mainFontBold: ano-bold_regular, Helvetica, Arial, sans-serif;
   width: 100%;
   height: 100vh;
   padding: 0;
-  margin: 0;
   display: flex;
+  justify-content: center;
 }
 
 // I chose PascalCase for all components
 // because it's easier to match the component name with the class name
 .App {
   width: 100%;
-  flex-grow: 1;
+  flex-basis: 85%;
   display: flex;
 }
 
@@ -37,7 +37,12 @@ $mainFontBold: ano-bold_regular, Helvetica, Arial, sans-serif;
 // flexbox is a great additional tool for this
 // which I have used for most of the layout work;
 @media (max-width: $siteWidth) {
+  .App {
+    flex-basis: 95%;
+  }
+
   .Content {
+    display: flex;
     margin-left: 0;
     margin-right: 0;
   }

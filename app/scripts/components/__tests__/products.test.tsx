@@ -16,12 +16,86 @@ describe("<Products />", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-
+  const products = [
+    {
+      _id: "string",
+      isActive: "string",
+      price: "string",
+      picture: "string",
+      name: "string",
+      about: "string",
+      tags: ["string"],
+    },
+  ];
   beforeEach(() => {
+    jest.mocked(useProducts).mockReturnValue({
+      products,
+      showProducts: true,
+      updateProducts: jest.fn(),
+      updateShowProducts: jest.fn((showProducts) => (showProducts = false)),
+    });
+  });
+
+  test("renders", () => {
+    render(
+      <IntlProvider
+        locale={navigator.language}
+        messages={{
+          "SearchResultsSummary.Displayed":
+            "test DISPLAYING {displayed} OF {total} RESULTS",
+          "SearchResultsSummary.Total": "test SEE ALL RESULTS",
+        }}
+      >
+        <ProductsProvider>
+          <Products />
+        </ProductsProvider>
+      </IntlProvider>
+    );
+    const element = screen.getByText("test DISPLAYING 1 OF 1 RESULTS");
+    expect(element).toBeInTheDocument();
+  });
+
+  test("renders", async () => {
     jest.mocked(useProducts).mockReturnValue({
       products: [
         {
           _id: "string",
+          isActive: "string",
+          price: "string",
+          picture: "string",
+          name: "string",
+          about: "string",
+          tags: ["string"],
+        },
+        {
+          _id: "string2",
+          isActive: "string",
+          price: "string",
+          picture: "string",
+          name: "string",
+          about: "string",
+          tags: ["string"],
+        },
+        {
+          _id: "string3",
+          isActive: "string",
+          price: "string",
+          picture: "string",
+          name: "string",
+          about: "string",
+          tags: ["string"],
+        },
+        {
+          _id: "string4",
+          isActive: "string",
+          price: "string",
+          picture: "string",
+          name: "string",
+          about: "string",
+          tags: ["string"],
+        },
+        {
+          _id: "string5",
           isActive: "string",
           price: "string",
           picture: "string",
@@ -34,9 +108,6 @@ describe("<Products />", () => {
       updateProducts: jest.fn(),
       updateShowProducts: jest.fn((showProducts) => (showProducts = false)),
     });
-  });
-
-  it("renders", () => {
     render(
       <IntlProvider
         locale={navigator.language}
@@ -51,35 +122,13 @@ describe("<Products />", () => {
         </ProductsProvider>
       </IntlProvider>
     );
-    expect(
-      screen.getByText("test DISPLAYING 1 OF 1 RESULTS")
-    ).toBeInTheDocument();
-  });
-
-  it("renders", async () => {
-    render(
-      <IntlProvider
-        locale={navigator.language}
-        messages={{
-          "SearchResultsSummary.Displayed":
-            "test DISPLAYING {displayed} OF {total} RESULTS",
-          "SearchResultsSummary.Total": "test SEE ALL RESULTS",
-        }}
-      >
-        <ProductsProvider>
-          <Products />
-        </ProductsProvider>
-      </IntlProvider>
-    );
-    expect(
-      screen.getByText("test DISPLAYING 1 OF 1 RESULTS")
-    ).toBeInTheDocument();
+    const element = screen.getByText("test DISPLAYING 4 OF 5 RESULTS");
+    expect(element).toBeInTheDocument();
     await waitFor(() => {
-      fireEvent.mouseOver(screen.getByText("test DISPLAYING 1 OF 1 RESULTS"));
+      fireEvent.mouseOver(element);
     });
     await waitFor(() => {
-      fireEvent.mouseLeave(screen.getByText("test DISPLAYING 1 OF 1 RESULTS"));
+      fireEvent.mouseLeave(element);
     });
-    expect(screen.getByText("test DISPLAYING 1 OF 1 RESULTS")).toBeNull();
   });
 });

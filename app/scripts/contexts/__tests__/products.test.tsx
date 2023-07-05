@@ -1,6 +1,11 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { render } from "@testing-library/react";
-import { ProductsContext, ProductsProvider, useProducts } from "../products";
+import {
+  ProductsContext,
+  ProductsProvider,
+  useProducts,
+  emptyFunction,
+} from "../products";
 import { initialState } from "../../reducers/products";
 
 jest.mock("react", () => {
@@ -20,7 +25,7 @@ describe("<ProductsProvider />", () => {
     jest.clearAllMocks();
   });
 
-  it("creates the context", () => {
+  test("creates the context", () => {
     expect(createContext).toHaveBeenCalledWith({
       ...initialState,
       updateProducts: expect.any(Function),
@@ -29,14 +34,14 @@ describe("<ProductsProvider />", () => {
   });
 
   describe("hook", () => {
-    it("defines hook that uses the product context", () => {
+    test("defines hook that uses the product context", () => {
       const contextValue = { products: [] }; // would be nice if a real looking mock was passed here for typescript to not complain
       jest.mocked(useContext).mockReturnValue(contextValue);
 
       expect(useProducts()).toBe(contextValue);
     });
 
-    it("throws if hook used outside a provider", () => {
+    test("throws if hook used outside a provider", () => {
       jest.mocked(useContext).mockReturnValue(undefined);
 
       expect(() => useProducts()).toThrow(
@@ -77,12 +82,12 @@ describe("<ProductsProvider />", () => {
       jest.mocked(useReducer).mockReturnValue([state, dispatchMock]);
     });
 
-    it("renders", () => {
+    test("renders", () => {
       const { baseElement } = setup();
       expect(baseElement).toMatchSnapshot();
     });
 
-    it("provides the products state", async () => {
+    test("provides the products state", async () => {
       const {
         result: { products, showProducts },
       } = setup();
@@ -91,7 +96,7 @@ describe("<ProductsProvider />", () => {
       expect(showProducts).toBe(state.showProducts);
     });
 
-    it("provides means to dispatch an update products action", () => {
+    test("provides means to dispatch an update products action", () => {
       const newProducts = [...state.products];
       const {
         result: { updateProducts },
@@ -101,11 +106,11 @@ describe("<ProductsProvider />", () => {
 
       expect(dispatchMock).toHaveBeenCalledWith({
         type: "UPDATE_PRODUCTS",
-        payload: newProducts,
+        payload: { products: newProducts },
       });
     });
 
-    it("provides means to dispatch an update products action", () => {
+    test("provides means to dispatch an update products action", () => {
       const newShowProducts = !state.showProducts;
       const {
         result: { updateShowProducts },
@@ -115,8 +120,12 @@ describe("<ProductsProvider />", () => {
 
       expect(dispatchMock).toHaveBeenCalledWith({
         type: "UPDATE_SHOW_PRODUCTS",
-        payload: newShowProducts,
+        payload: { showProducts: newShowProducts },
       });
+    });
+
+    test("emptyFunction returns null", () => {
+      expect(emptyFunction()).toBe(null);
     });
   });
 });

@@ -10,11 +10,11 @@ export type Product = {
 
 export type UpdateProductsAction = {
   type: "UPDATE_PRODUCTS";
-  payload: Product[];
+  payload: { products: Product[] };
 };
 export type UpdateShowProductsAction = {
   type: "UPDATE_SHOW_PRODUCTS";
-  payload: boolean;
+  payload: { showProducts: boolean };
 };
 
 export type ProductState = {
@@ -39,12 +39,13 @@ export const productsReducer = (
     case "UPDATE_PRODUCTS":
       return {
         ...state,
-        products: payload,
+        products: payload.products,
+        showProducts: true,
       };
     case "UPDATE_SHOW_PRODUCTS":
       return {
         ...state,
-        showProducts: payload,
+        showProducts: payload.showProducts,
       };
     default:
       // to avoid ungraceful errors in the UI

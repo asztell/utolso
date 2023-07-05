@@ -1,8 +1,9 @@
 import React from "react";
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { FormattedMessage } from "react-intl";
 import { useProducts } from "../contexts/products";
 
+// as an alternative this component could be implemented with react-dom/createPortal
 export function Products() {
   const { products, showProducts, updateShowProducts } = useProducts();
   // I chose mouseleave because it seemed like the most intuitive way
@@ -10,7 +11,6 @@ export function Products() {
   // but for a prod implementation I would want to consult a UX designer
   // to see what they think is best
   const onMouseLeave = useCallback(() => {
-    console.log("mouse leave");
     updateShowProducts(false);
   }, [updateShowProducts]);
 
@@ -21,7 +21,7 @@ export function Products() {
   }
 
   return (
-    <section>
+    <section className="SearchResults" onMouseLeave={onMouseLeave}>
       <h2 className="SearchResultsSummary">
         <FormattedMessage
           id="SearchResultsSummary.Displayed"
@@ -35,7 +35,7 @@ export function Products() {
         </a>
       </h2>
       <hr />
-      <ul onMouseLeave={onMouseLeave} className="SearchResults">
+      <ul className="SearchResultItems">
         {products.slice(0, 4).map((product) => {
           const { _id, picture, name, about } = product;
           return (
@@ -44,7 +44,7 @@ export function Products() {
             <a key={_id} href="#">
               <li className="ProductCard">
                 <img src={picture} />
-                <div className="product-info">
+                <div>
                   <h3>{name.toUpperCase()}</h3>
                   <p>{about}</p>
                 </div>
