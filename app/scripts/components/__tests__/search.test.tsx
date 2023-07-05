@@ -15,6 +15,8 @@ describe("<Search />", () => {
   // spy on the default export of config
   const fetchProductsByName = jest.spyOn(services, "fetchProductsByName");
 
+  jest.useFakeTimers();
+
   test("renders and fetches successfully", async () => {
     // replace the implementation
     fetchProductsByName.mockImplementation(() => Promise.resolve([]));
@@ -35,6 +37,7 @@ describe("<Search />", () => {
         target: { value: "t" },
       });
     });
+    jest.runAllTimers();
     expect(screen.getByPlaceholderText("test SEARCH")).toHaveValue("t");
   });
 
@@ -62,6 +65,7 @@ describe("<Search />", () => {
         target: { value: "t" },
       });
     });
+    jest.runAllTimers();
     expect(screen.getByPlaceholderText("test SEARCH")).toHaveValue("t");
   });
 });
