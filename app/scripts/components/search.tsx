@@ -38,12 +38,12 @@ export function Search() {
       target: { value: string };
     }): Promise<void> => {
       setSearch(value);
-      // console.log("localStorage.search", search);
+      console.log("localStorage.search", localStorage.search);
       try {
         const response: Product[] = await fetchProductsByName(value);
         // console.log("response", response);
         setProducts(JSON.stringify(response));
-        // console.log("localStorage.products", products);
+        console.log("localStorage.products", localStorage.products);
         updateProducts(response);
       } catch (error) {
         // normally I would use a logger like Sentry to log the error

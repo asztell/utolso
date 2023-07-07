@@ -1,9 +1,10 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { ProductsProvider } from "../../contexts/products";
 import { Search } from "../search";
 import * as services from "../../utils/services";
+import { act } from "react-dom/test-utils";
 
 jest.mock("../../utils/services");
 
@@ -32,13 +33,16 @@ describe("<Search />", () => {
         </ProductsProvider>
       </IntlProvider>
     );
-    await waitFor(() => {
+    await act(() => {
       fireEvent.change(screen.getByPlaceholderText("test SEARCH"), {
         target: { value: "t" },
       });
     });
-    jest.runAllTimers();
+    await act(async () => {
+      await jest.runAllTimers();
+    });
     expect(screen.getByPlaceholderText("test SEARCH")).toHaveValue("t");
+    expect(localStorage.search).toBe(JSON.stringify("t"));
   });
 
   test("renders but fetch fails", async () => {
@@ -60,12 +64,13 @@ describe("<Search />", () => {
         </ProductsProvider>
       </IntlProvider>
     );
-    await waitFor(() => {
+    await act(() => {
       fireEvent.change(screen.getByPlaceholderText("test SEARCH"), {
         target: { value: "t" },
       });
     });
     jest.runAllTimers();
     expect(screen.getByPlaceholderText("test SEARCH")).toHaveValue("t");
+    expect(localStorage.search).toBe(JSON.stringify("t"));
   });
 });

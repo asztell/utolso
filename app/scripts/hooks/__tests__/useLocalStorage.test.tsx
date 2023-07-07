@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, act } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { useLocalStorage } from "../useLocalStorage";
 
 function setup(keyValuePair: { key: string; initialValue: string | Function }) {
@@ -10,7 +10,6 @@ function setup(keyValuePair: { key: string; initialValue: string | Function }) {
   function TestComponent() {
     const [value, setValue] = useLocalStorage(keyValuePair);
     Object.assign(returnVal, { value, setValue });
-
     return null;
   }
   render(<TestComponent />);
@@ -21,16 +20,7 @@ describe("useLocalStorage", () => {
   test("should return the initial value", () => {
     const key = "test";
     const initialValue = "testValue";
-    //   const initialObjectValue = { test: "testValue" };
     const someObj = setup({ key, initialValue });
     expect(someObj.value).toBe(initialValue);
   });
-
-  //   xtest("should return the initial value", () => {
-  //     const key = "test";
-  //     const initialValue = "testValue" as unknown as Function;
-  //     //   const initialObjectValue = { test: "testValue" };
-  //     const someObj = setup({ key, initialValue });
-  //     expect(someObj.value).toBe(initialValue);
-  //   });
 });
